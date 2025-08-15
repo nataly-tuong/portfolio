@@ -82,8 +82,8 @@ export default function Home() {
   }, []);
 
   return (
-    <section id="Home">
-      <div className="bg-black bg-[url('/Texturelabs_LensFX_130M.jpg')] bg-cover px-55 pb-50 pt-50 text-white bg-[position:10%_center] relative overflow-hidden">
+    <section id="Home" className="relative">
+      <div className="bg-black bg-[url('/Texturelabs_LensFX_130M.jpg')] bg-cover px-55 pb-50 pt-50 text-white bg-[position:10%_center] relative overflow-hidden min-h-screen">
         <div
           ref={star1}
           className="absolute top-30 right-15 bg-[url('Texturelabs_LensFX_242S.jpg')] bg-cover bg-center mix-blend-plus-lighter w-40 h-40 brightness-125 animate-pulse z-50"
@@ -154,7 +154,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-t from-black to-transparent bottom-0 left-0 w-full h-40 absolute"></div>
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent pointer-events-none z-10"></div>
       </div>
     </section>
   );
