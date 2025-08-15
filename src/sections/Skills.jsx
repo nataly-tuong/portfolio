@@ -10,7 +10,7 @@ export default function Skills() {
 
   return (
     <section id="Skills">
-      <div className="bg-black w-full h-auto relative text-white px-15 py-20">
+      <div className="bg-black w-full h-100 relative text-white px-15 py-20">
         <div
           className="absolute top-2 right-15
                         bg-[url('Texturelabs_LensFX_242S.jpg')]
