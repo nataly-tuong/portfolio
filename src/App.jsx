@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    document.title = "Nataly's Portfolio";
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <main>
+        <section id="about">
+          <div
+            class="bg-black
+           bg-[url('/Texturelabs_LensFX_130M.jpg')] bg-cover bg-center
+           px-20 py-40 text-white text-center"
+          >
+            <h1
+              class="text-4xl font-bold bg-gradient-to-r
+           from-red-600 to-cyan-600 inline-block 
+           text-transparent bg-clip-text"
+            >
+              Nataly Tuong
+            </h1>
+            <h2 class="font-bold">
+              aspiring software engineer & web developer
+            </h2>
+            <p>
+              ✧ദ്ദി( ˶^ᗜ^˶ ) Hi! Hello, I love exploring what tech has to offer.
+              Specifically, I'm interested in creating works with thoughtful
+              architecture and intent. I'm deeply committed to innovation and
+              continuous learning.
+            </p>
+          </div>
+        </section>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
