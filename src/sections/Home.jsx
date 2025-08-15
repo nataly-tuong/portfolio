@@ -16,7 +16,7 @@ export default function Home() {
                         bg-cover bg-center
                         mix-blend-plus-lighter
                         w-20 h-20 brightness-125
-                        animate-pulse"
+                        animate-pulse z-50"
         ></div>
         <div
           className="absolute top-90 left-60
@@ -25,7 +25,7 @@ export default function Home() {
                         mix-blend-plus-lighter
                         w-10 h-10 brightness-200
                         rotate-[20deg]
-                        animate-pulse"
+                        animate-pulse z-50"
         ></div>
         <div
           className="absolute top-85 left-35
@@ -34,7 +34,7 @@ export default function Home() {
                         mix-blend-plus-lighter
                         w-25 h-25 brightness-80
                         rotate-[5deg]
-                        animate-pulse"
+                        animate-pulse z-50"
         ></div>
 
         <h1
@@ -57,6 +57,11 @@ export default function Home() {
           architecture and intent. I'm deeply committed to innovation and
           continuous learning.
         </p>
+
+        <div
+          class="bg-gradient-to-t from-black to-transparent
+        bottom-0 left-0 w-full h-40 absolute"
+        ></div>
       </div>
     </section>
   );
