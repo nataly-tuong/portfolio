@@ -2,15 +2,37 @@ import ShinyText from "../components/ShinyText/ShinyText";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Model from "../components/Model";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Home() {
+  const timeline = gsap.timeline({
+    repeat: 0,
+  });
+
+  useGSAP(() => {
+    timeline.from(".hero-text", {
+      x: -1250,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power3.out",
+      stagger: 0.3,
+    });
+
+    timeline.to("#bear", {
+      right: 35,
+      ease: "power2.out",
+      duration: 0.8,
+    });
+  }, []);
+
   return (
     <section id="Home">
       <div
         className="bg-black
                    bg-[url('/Texturelabs_LensFX_130M.jpg')] bg-cover
                    px-55 pb-50 pt-50 text-white
-                   bg-[position:10%_center] relative"
+                   bg-[position:10%_center] relative overflow-hidden"
       >
         <div
           className="absolute top-30 right-15
@@ -30,7 +52,7 @@ export default function Home() {
                         animate-pulse z-50"
         ></div>
         <div
-          className="absolute top-130 left-35
+          className="absolute top-100 left-35
                         bg-[url('Texturelabs_LensFX_242S.jpg')]
                         bg-cover bg-center
                         mix-blend-plus-lighter
@@ -40,9 +62,9 @@ export default function Home() {
         ></div>
 
         <div class="flex">
-          <div class="pl-40">
+          <div>
             <h1
-              className="text-5xl font-bold bg-gradient-to-r
+              className="hero-text text-5xl font-bold bg-gradient-to-r
                        from-mainAccent to-secondaryAccent inline-block py-2 
                        text-transparent bg-clip-text
                        mb-2"
@@ -50,14 +72,11 @@ export default function Home() {
               Nataly Tuong
             </h1>
             <div>
-              <ShinyText
-                text="aspiring software engineer & web developer"
-                disabled={false}
-                speed={2}
-                className="custom-class font-bold mb-2"
-              />
+              <h2 className="hero-text custom-class font-bold mb-2">
+                aspiring software engineer & web developer
+              </h2>
             </div>
-            <p class="text-left pr-70">
+            <p className="hero-text text-left pr-70">
               ✧ദ്ദി( ˶^ᗜ^˶ ) Hi! Hello, I love exploring what tech has to offer.
               Specifically, I'm interested in creating works with thoughtful
               architecture and intent. I'm deeply committed to innovation and
@@ -66,11 +85,11 @@ export default function Home() {
             </p>
             <div></div>
 
-            <div class="flex mt-4 gap-4">
-              <button class="bg-black border-1 border-mainAccent rounded-4xl py-2 px-4">
+            <div className="hero-text flex mt-4 gap-4">
+              <button className="bg-black border-1 border-mainAccent rounded-4xl py-2 px-4">
                 Connect
               </button>
-              <button class="bg-black border-1 border-secondaryAccent rounded-4xl py-2 px-4">
+              <button className="bg-black border-1 border-secondaryAccent rounded-4xl py-2 px-4">
                 Resume
               </button>
             </div>
@@ -78,21 +97,22 @@ export default function Home() {
           <div>
             <div>
               <Canvas
+                id="bear"
                 style={{
                   position: "absolute",
                   top: 70,
-                  right: 90,
+                  right: -1000,
                   width: 500,
                   height: 500,
                 }}
               >
-                <ambientLight intensity={0.8} />
+                <ambientLight intensity={0.4} />
                 <directionalLight position={[5, 5, 5]} />
                 <Model scale={4} />
                 <OrbitControls
                   enableZoom={false}
                   autoRotate={true}
-                  autoRotateSpeed={1}
+                  autoRotateSpeed={3}
                   enableRotate={true}
                   maxPolarAngle={Math.PI / 1.5}
                   minPolarAngle={Math.PI / 4}
@@ -103,7 +123,7 @@ export default function Home() {
         </div>
 
         <div
-          class="bg-gradient-to-t from-black to-transparent
+          className="bg-gradient-to-t from-black to-transparent
         bottom-0 left-0 w-full h-40 absolute"
         ></div>
       </div>

@@ -1,11 +1,11 @@
 export default function Skills() {
   const skills = [
-    { name: "Java", logo: "/assets/java-original.svg" },
-    { name: "JavaScript", logo: "/assets/javascript-original.svg" },
-    { name: "HTML", logo: "/assets/html5-original.svg" },
-    { name: "CSS", logo: "/assets/css3-original.svg" },
-    { name: "Python", logo: "/assets/python-original.svg" },
-    { name: "React.js", logo: "/assets/react-original.svg" },
+    { name: "Java", logo: "/portfolio/assets/java-original.svg" },
+    { name: "JavaScript", logo: "/portfolio/assets/javascript-original.svg" },
+    { name: "HTML", logo: "/portfolio/assets/html5-original.svg" },
+    { name: "CSS", logo: "/portfolio/assets/css3-original.svg" },
+    { name: "Python", logo: "/portfolio/assets/python-original.svg" },
+    { name: "React.js", logo: "/portfolio/assets/react-original.svg" },
   ];
 
   return (
