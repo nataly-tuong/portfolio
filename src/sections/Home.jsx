@@ -3,11 +3,17 @@ import { OrbitControls } from "@react-three/drei";
 import Model from "../components/Model";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+import { useRef } from "react";
 
 export default function Home() {
-  const timeline = gsap.timeline({
-    repeat: 0,
-  });
+  const star1 = useRef();
+  const star2 = useRef();
+  const star3 = useRef();
+
+  const timeline = gsap.timeline({ repeat: 0 });
+
+  gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
     timeline.from(".hero-text", {
@@ -23,51 +29,77 @@ export default function Home() {
       ease: "power2.out",
       duration: 0.8,
     });
+
+    gsap.fromTo(
+      star1.current,
+      { y: -80, opacity: 0, rotation: 0 },
+      {
+        y: 50,
+        opacity: 1,
+        rotation: 360,
+        scrollTrigger: {
+          trigger: "#Home",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      star2.current,
+      { y: -50, x: 0, opacity: 0, rotation: -45 },
+      {
+        y: 60,
+        x: 30,
+        opacity: 1,
+        rotation: 45,
+        scrollTrigger: {
+          trigger: "#Home",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      star3.current,
+      { y: -50, x: 0, opacity: 0, rotation: 30 },
+      {
+        y: 40,
+        x: -30,
+        opacity: 1,
+        rotation: -30,
+        scrollTrigger: {
+          trigger: "#Home",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      }
+    );
   }, []);
 
   return (
     <section id="Home">
-      <div
-        className="bg-black
-                   bg-[url('/Texturelabs_LensFX_130M.jpg')] bg-cover
-                   px-55 pb-50 pt-50 text-white
-                   bg-[position:10%_center] relative overflow-hidden"
-      >
+      <div className="bg-black bg-[url('/Texturelabs_LensFX_130M.jpg')] bg-cover px-55 pb-50 pt-50 text-white bg-[position:10%_center] relative overflow-hidden">
         <div
-          className="absolute top-30 right-15
-                        bg-[url('Texturelabs_LensFX_242S.jpg')]
-                        bg-cover bg-center
-                        mix-blend-plus-lighter
-                        w-40 h-40 brightness-125
-                        animate-pulse z-50"
+          ref={star1}
+          className="absolute top-30 right-15 bg-[url('Texturelabs_LensFX_242S.jpg')] bg-cover bg-center mix-blend-plus-lighter w-40 h-40 brightness-125 animate-pulse z-50"
         ></div>
         <div
-          className="absolute top-120 left-70
-                        bg-[url('Texturelabs_LensFX_242S.jpg')]
-                        bg-cover bg-center
-                        mix-blend-plus-lighter
-                        w-20 h-20 brightness-200
-                        rotate-[20deg]
-                        animate-pulse z-50"
+          ref={star2}
+          className="absolute top-120 left-70 bg-[url('Texturelabs_LensFX_242S.jpg')] bg-cover bg-center mix-blend-plus-lighter w-20 h-20 brightness-200 rotate-[20deg] animate-pulse z-50"
         ></div>
         <div
-          className="absolute top-100 left-35
-                        bg-[url('Texturelabs_LensFX_242S.jpg')]
-                        bg-cover bg-center
-                        mix-blend-plus-lighter
-                        w-50 h-50 brightness-80
-                        rotate-[5deg]
-                        animate-pulse z-50"
+          ref={star3}
+          className="absolute top-115 left-35 bg-[url('Texturelabs_LensFX_242S.jpg')] bg-cover bg-center mix-blend-plus-lighter w-50 h-50 brightness-80 rotate-[5deg] animate-pulse z-50"
         ></div>
 
-        <div class="flex">
+        <div className="flex">
           <div>
-            <h1
-              className="hero-text text-5xl font-bold bg-gradient-to-r
-                       from-mainAccent to-secondaryAccent inline-block py-2 
-                       text-transparent bg-clip-text
-                       mb-2"
-            >
+            <h1 className="hero-text text-5xl font-bold bg-gradient-to-r from-mainAccent to-secondaryAccent inline-block py-2 text-transparent bg-clip-text mb-2">
               Nataly Tuong
             </h1>
             <div>
@@ -83,7 +115,6 @@ export default function Home() {
               music. Feel free to reach out!
             </p>
             <div></div>
-
             <div className="hero-text flex mt-4 gap-4">
               <button className="bg-black border-1 border-mainAccent rounded-4xl py-2 px-4">
                 Connect
@@ -104,6 +135,7 @@ export default function Home() {
                   width: 500,
                   height: 500,
                 }}
+                className="cursor-pointer transform transition-transform duration-500 ease-out hover:scale-110"
               >
                 <ambientLight intensity={0.4} />
                 <directionalLight position={[5, 5, 5]} />
@@ -121,10 +153,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div
-          className="bg-gradient-to-t from-black to-transparent
-        bottom-0 left-0 w-full h-40 absolute"
-        ></div>
+        <div className="bg-gradient-to-t from-black to-transparent bottom-0 left-0 w-full h-40 absolute"></div>
       </div>
     </section>
   );

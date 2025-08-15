@@ -22,17 +22,22 @@ export default function Skills() {
 
   useGSAP(() => {
     const boxes = gsap.utils.toArray(scrollRef.current.children);
-    gsap.from(boxes, {
-      scrollTrigger: {
-        trigger: scrollRef.current,
-        start: "top 80%",
-        toggleActions: "play none none none",
-      },
-      opacity: 0,
-      y: 50,
-      stagger: 0.2,
-      duration: 0.6,
-      ease: "power3.out",
+    const timeline = gsap.timeline({ paused: true });
+
+    timeline.fromTo(
+      boxes,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, stagger: 0.2, duration: 0.6, ease: "power3.out" }
+    );
+
+    ScrollTrigger.create({
+      trigger: scrollRef.current,
+      start: "top 80%",
+      end: "bottom top",
+      onEnter: () => timeline.play(),
+      onLeave: () => timeline.pause(0),
+      onEnterBack: () => timeline.play(),
+      onLeaveBack: () => timeline.pause(0),
     });
   }, []);
 
