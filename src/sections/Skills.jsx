@@ -1,3 +1,8 @@
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+
 export default function Skills() {
   const skills = [
     { name: "Java", logo: "/portfolio/assets/java-original.svg" },
@@ -6,7 +11,30 @@ export default function Skills() {
     { name: "CSS", logo: "/portfolio/assets/css3-original.svg" },
     { name: "Python", logo: "/portfolio/assets/python-original.svg" },
     { name: "React.js", logo: "/portfolio/assets/react-original.svg" },
+    { name: "Git", logo: "/portfolio/assets/git-original.svg" },
+    { name: "GitHub", logo: "/portfolio/assets/github-original.svg" },
+    { name: "Vite", logo: "/portfolio/assets/vite-original.svg" },
+    { name: "GSAP", logo: "/portfolio/assets/gsap-white.svg" },
   ];
+
+  const scrollRef = useRef();
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    const boxes = gsap.utils.toArray(scrollRef.current.children);
+    gsap.from(boxes, {
+      scrollTrigger: {
+        trigger: scrollRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      opacity: 0,
+      y: 50,
+      stagger: 0.2,
+      duration: 0.6,
+      ease: "power3.out",
+    });
+  }, []);
 
   return (
     <section id="Skills">
@@ -21,7 +49,10 @@ export default function Skills() {
                         animate-pulse z-50"
         ></div>
         <h3 className="text-3xl font-bold mb-6">Skills</h3>
-        <div className="flex flex-wrap justify-center gap-4">
+        <div
+          className="skill-box flex flex-wrap justify-center gap-4"
+          ref={scrollRef}
+        >
           {skills.map((skill) => (
             <div
               key={skill.name}
