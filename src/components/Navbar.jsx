@@ -9,7 +9,8 @@ export default function Navbar() {
       className="fixed top-5 left-1/2 -translate-x-1/2 
                   flex space-x-5 z-50
                   text-white bg-black/50 px-3 py-2 
-                  border border-white/30 rounded-4xl"
+                  border border-white/30 rounded-4xl font-semibold
+                  backdrop-blur-md"
     >
       {links.map((link) => (
         <button
