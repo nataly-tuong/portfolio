@@ -142,6 +142,7 @@ export default function Home() {
                 <Model scale={4} />
                 <OrbitControls
                   enableZoom={false}
+                  enablePan={false}
                   autoRotate={true}
                   autoRotateSpeed={3}
                   enableRotate={true}
