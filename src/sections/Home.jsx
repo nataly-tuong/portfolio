@@ -9,7 +9,6 @@ export default function Home() {
                    px-25 pb-40 pt-35 text-white text-center
                    bg-[position:10%_center] relative"
       >
-        {/* Floating overlay images */}
         <div
           className="absolute top-20 right-15
                         bg-[url('Texturelabs_LensFX_242S.jpg')]
