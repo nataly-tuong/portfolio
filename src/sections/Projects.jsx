@@ -13,7 +13,7 @@ export default function Projects() {
         ></div>
         <h3 className="text-3xl font-bold z-60 mb-6 relative">Projects</h3>
 
-        <div class="relative">
+        {/* <div class="relative">
           <div
             class="bg-black
         bg-[url('/Texturelabs_InkPaint_131S.jpg')] bg-[position:10%_center] bg-[size:250%] w-90 h-70
@@ -41,7 +41,7 @@ export default function Projects() {
               HTML5 and CSS3 with mobile-first design
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
