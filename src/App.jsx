@@ -6,15 +6,17 @@ function App() {
   useEffect(() => {
     document.title = "Nataly's Portfolio";
   }, []);
+  const [selected, setSelected] = useState("Home");
+  const links = ["Home", "Skills", "Projects", "About", "Contact"];
 
   return (
     <>
       <main>
-        <section id="about">
+        <section id="Home">
           <div
             class="bg-black
            bg-[url('/Texturelabs_LensFX_130M.jpg')] bg-cover
-           px-25 py-40 text-white text-center
+           px-25 pb-40 pt-35 text-white text-center
            bg-[position:10%_center] relative"
           >
             <div
@@ -45,7 +47,7 @@ function App() {
             ></div>
             <h1
               class="text-5xl font-bold bg-gradient-to-r
-           from-mainAccent to-secondaryAccent inline-block p-1 
+           from-mainAccent to-secondaryAccent inline-block p-2 
            text-transparent bg-clip-text
            m-2"
             >
@@ -67,10 +69,23 @@ function App() {
         </section>
         <navbar>
           <div
-            class="absolute top-10
-           text-white"
+            className="fixed top-5 left-1/2 -translate-x-1/2 
+            flex space-x-5
+                    text-white bg-black/50 px-3 py-2 
+                    border border-white/30 rounded-4xl"
           >
-            meow
+            {links.map((link) => (
+              <a
+                key={link}
+                href={`#${link}`}
+                className={`px-3 py-1 rounded-4xl text-center ${
+                  selected === link ? "bg-[#7E7E7E]" : ""
+                }`}
+                onClick={() => setSelected(link)}
+              >
+                {link}
+              </a>
+            ))}
           </div>
         </navbar>
       </main>

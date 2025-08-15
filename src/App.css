@@ -4,3 +4,11 @@
   --color-mainAccent: #ff0000;
   --color-secondaryAccent: #00d4e1;
 }
+
+.nav-link.selected {
+  @apply bg-[#7E7E7E];
+}
+
+.nav-link {
+  @apply px-3 py-1 rounded-4xl text-center;
+}
