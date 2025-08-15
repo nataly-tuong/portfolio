@@ -10,7 +10,16 @@ export default function Skills() {
 
   return (
     <section id="Skills">
-      <div className="bg-black w-full h-auto text-white px-15 py-20">
+      <div className="bg-black w-full h-auto relative text-white px-15 py-20">
+        <div
+          className="absolute top-2 right-15
+                        bg-[url('Texturelabs_LensFX_242S.jpg')]
+                        bg-cover bg-center
+                        mix-blend-plus-lighter
+                        w-18 h-18 brightness-120
+                        rotate-[120deg]
+                        animate-pulse z-50"
+        ></div>
         <h3 className="text-3xl font-bold mb-6">Skills</h3>
         <div className="flex flex-wrap justify-center gap-4">
           {skills.map((skill) => (
