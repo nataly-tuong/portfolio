@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@theme {
+  --color-mainAccent: #ff0000;
+  --color-secondaryAccent: #00d4e1;
+}
