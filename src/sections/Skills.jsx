@@ -18,26 +18,45 @@ export default function Skills() {
   ];
 
   const scrollRef = useRef();
+  const headersRef = useRef();
+  const secondHeadersRef = useRef();
+
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
     const boxes = gsap.utils.toArray(scrollRef.current.children);
-    const timeline = gsap.timeline({ paused: true });
-
-    timeline.fromTo(
+    gsap.fromTo(
       boxes,
       { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, stagger: 0.2, duration: 0.6, ease: "power3.out" }
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.2,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: scrollRef.current,
+          start: "top 80%",
+        },
+      }
     );
 
-    ScrollTrigger.create({
-      trigger: scrollRef.current,
-      start: "top 80%",
-      end: "bottom top",
-      onEnter: () => timeline.play(),
-      onLeave: () => timeline.pause(0),
-      onEnterBack: () => timeline.play(),
-      onLeaveBack: () => timeline.pause(0),
+    const headersContainer = headersRef.current;
+    const secondHeadersContainer = secondHeadersRef.current;
+
+    gsap.to(headersContainer, {
+      x: "-50%",
+      duration: 10,
+      ease: "none",
+      repeat: -1,
+    });
+
+    gsap.set(secondHeadersContainer, { x: "-50%" });
+    gsap.to(secondHeadersContainer, {
+      x: "0%",
+      duration: 10,
+      ease: "none",
+      repeat: -1,
     });
   }, []);
 
@@ -53,11 +72,35 @@ export default function Skills() {
                         rotate-[120deg]
                         animate-pulse z-50"
         ></div>
-        <h3 className="text-3xl font-bold mb-6">Skills</h3>
-        <div
-          className="skill-box flex flex-wrap justify-center gap-4"
-          ref={scrollRef}
-        >
+
+        <div className="relative overflow-hidden whitespace-nowrap mb-6">
+          <div ref={headersRef} className="flex gap-x-5 inline-flex">
+            <h3 className="skills-header text-5xl font-semibold">SKILLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LIBRARIES</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">TOOLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">FRAMEWORKS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LANGUAGES</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">SKILLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LIBRARIES</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">TOOLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">FRAMEWORKS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LANGUAGES</h3>
+          </div>
+
+          <div className="absolute top-0 left-0 z-10 bg-gradient-to-r from-black to-transparent h-full w-32 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 z-10 bg-gradient-to-l from-black to-transparent h-full w-32 pointer-events-none"></div>
+        </div>
+
+        <div className="skill-box flex justify-center gap-4" ref={scrollRef}>
           {skills.map((skill) => (
             <div
               key={skill.name}
@@ -69,6 +112,33 @@ export default function Skills() {
               </span>
             </div>
           ))}
+        </div>
+
+        <div className="relative overflow-hidden whitespace-nowrap mb-6 mt-6">
+          <div ref={secondHeadersRef} className="flex gap-x-5 inline-flex">
+            <h3 className="skills-header text-5xl font-semibold">SKILLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LIBRARIES</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">TOOLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">FRAMEWORKS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LANGUAGES</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">SKILLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LIBRARIES</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">TOOLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">FRAMEWORKS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LANGUAGES</h3>
+          </div>
+
+          <div className="absolute top-0 left-0 z-10 bg-gradient-to-r from-black to-transparent h-full w-32 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 z-10 bg-gradient-to-l from-black to-transparent h-full w-32 pointer-events-none"></div>
         </div>
       </div>
     </section>

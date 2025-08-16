@@ -10,6 +10,10 @@ export default function Home() {
   const star1 = useRef();
   const star2 = useRef();
   const star3 = useRef();
+  const star4 = useRef();
+  const star5 = useRef();
+  const star6 = useRef();
+  const star7 = useRef();
   const [isMobile, setIsMobile] = useState(false);
 
   const timeline = gsap.timeline({ repeat: 0 });
@@ -17,16 +21,6 @@ export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    document.title = "Nataly's Portfolio";
-
-    const favicon =
-      document.querySelector('link[rel="icon"]') ||
-      document.createElement("link");
-    favicon.rel = "icon";
-    favicon.href =
-      "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐻</text></svg>";
-    document.head.appendChild(favicon);
-
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -48,11 +42,17 @@ export default function Home() {
     });
 
     if (!isMobile) {
-      timeline.to("#bear", {
-        right: 35,
-        ease: "power2.out",
-        duration: 0.8,
-      });
+      timeline.fromTo(
+        "#bear",
+        {
+          right: -1000,
+        },
+        {
+          right: -240,
+          ease: "power2.out",
+          duration: 0.8,
+        }
+      );
     }
 
     const starAnimationProps = {
@@ -64,40 +64,25 @@ export default function Home() {
       },
     };
 
-    gsap.fromTo(
-      star1.current,
-      { y: -80, opacity: 0, rotation: 0 },
-      {
-        y: 50,
-        opacity: 1,
-        rotation: 360,
-        ...starAnimationProps,
-      }
-    );
+    const stars = [star1, star2, star3, star4, star5, star6, star7];
 
-    gsap.fromTo(
-      star2.current,
-      { y: -50, x: 0, opacity: 0, rotation: -45 },
-      {
-        y: 60,
-        x: 30,
-        opacity: 1,
-        rotation: 45,
-        ...starAnimationProps,
-      }
-    );
+    stars.forEach((star, index) => {
+      const randomY = Math.random() * 80 - 40;
+      const randomX = Math.random() * 40 - 20;
+      const randomRotation = Math.random() * 720 - 360;
 
-    gsap.fromTo(
-      star3.current,
-      { y: -50, x: 0, opacity: 0, rotation: 30 },
-      {
-        y: 40,
-        x: -30,
-        opacity: 1,
-        rotation: -30,
-        ...starAnimationProps,
-      }
-    );
+      gsap.fromTo(
+        star.current,
+        { y: randomY - 80, x: randomX - 20, opacity: 0, rotation: 0 },
+        {
+          y: randomY + 60,
+          x: randomX + 20,
+          opacity: Math.random() * 0.5 + 0.5,
+          rotation: randomRotation,
+          ...starAnimationProps,
+        }
+      );
+    });
   }, [isMobile]);
 
   return (
@@ -115,70 +100,68 @@ export default function Home() {
           ref={star3}
           className="absolute pointer-events-none top-28 left-8 sm:top-56 sm:left-20 md:top-115 md:left-35 bg-[url('Texturelabs_LensFX_242S.jpg')] bg-cover bg-center mix-blend-plus-lighter w-12 h-12 sm:w-16 sm:h-16 md:w-50 md:h-50 brightness-80 rotate-[5deg] animate-pulse z-50"
         ></div>
+        <div
+          ref={star4}
+          className="absolute pointer-events-none top-16 right-1/4 sm:top-32 sm:right-1/3 md:top-60 md:right-1/4 lg:top-40 lg:right-1/5 bg-[url('Texturelabs_LensFX_242S.jpg')] bg-cover bg-center mix-blend-plus-lighter w-6 h-6 sm:w-8 sm:h-8 md:w-25 md:h-25 lg:w-30 lg:h-30 brightness-150 rotate-[45deg] animate-pulse z-50"
+        ></div>
+        <div
+          ref={star5}
+          className="absolute pointer-events-none bottom-40 left-1/3 sm:bottom-48 sm:left-1/4 md:bottom-80 md:left-1/3 bg-[url('Texturelabs_LensFX_242S.jpg')] bg-cover bg-center mix-blend-plus-lighter w-7 h-7 sm:w-10 sm:h-10 md:w-28 md:h-28 brightness-110 rotate-[-30deg] animate-pulse z-50"
+        ></div>
+        <div
+          ref={star6}
+          className="absolute pointer-events-none top-60 left-1/2 sm:top-80 sm:left-1/2 md:top-140 md:left-1/2 bg-[url('Texturelabs_LensFX_242S.jpg')] bg-cover bg-center mix-blend-plus-lighter w-5 h-5 sm:w-8 sm:h-8 md:w-22 md:h-22 brightness-180 rotate-[120deg] animate-pulse z-50"
+        ></div>
+        <div
+          ref={star7}
+          className="absolute pointer-events-none bottom-20 right-1/3 sm:bottom-32 sm:right-1/4 md:bottom-50 md:right-1/3 bg-[url('Texturelabs_LensFX_242S.jpg')] bg-cover bg-center mix-blend-plus-lighter w-9 h-9 sm:w-12 sm:h-12 md:w-32 md:h-32 brightness-90 rotate-[75deg] animate-pulse z-50"
+        ></div>
 
         <div className="flex flex-col lg:flex-row items-center lg:items-start">
-          <div className="flex-1 text-center lg:text-left mb-8 lg:mb-0">
-            <h1 className="hero-text text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-mainAccent to-secondaryAccent inline-block py-2 text-transparent bg-clip-text mb-2">
-              Nataly Tuong
+          <div className="flex-1 text-center lg:text-left mb-8 lg:mb-0  pl-10 lg:pr-20">
+            <h1 className="hero-text text-space text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold inline-block py-2  mb-2">
+              Hi, I'm <span className="special">Nataly Tuong</span>. Welcome to
+              my corner of creations!
             </h1>
-            <div>
-              <h2 className="hero-text custom-class font-bold mb-2 text-sm sm:text-base md:text-lg">
-                aspiring software engineer & web developer
-              </h2>
-            </div>
-            <p className="hero-text text-left text-xs sm:text-sm md:text-base lg:pr-70 leading-relaxed">
-              ✧ദ്ദി( ˶^ᗜ^˶ ) Hi! Hello, I love exploring what tech has to offer.
-              Specifically, I'm interested in creating works with thoughtful
-              architecture and intent. I'm deeply committed to innovation and
-              continuous learning. I'm a huge lover of anything silly, cats, and
-              music. Feel free to reach out!
+            <h2 className="hero-text custom-class font-bold mb-2 text-sm sm:text-base md:text-lg lg:text-xl">
+              aspiring software engineer & web developer
+            </h2>
+            <p className="hero-text text-left text-sm sm:text-base md:text-lg lg:text-xl xl:text-md lg:pr-10 pt-8 sm:pt-12 md:pt-16 lg:pt-20 leading-relaxed">
+              ✧ദ്ദി( ˶^ᗜ^˶ ) Hi! Hello, I love exploring and{" "}
+              <span class="special">learning</span> about what tech has to
+              offer. Specifically, I'm interested in creating works with
+              thoughtful architecture and intent. I'm deeply{" "}
+              <span class="special">committed</span> to{" "}
+              <span class="special">innovation</span>. I'm a huge lover of
+              anything silly, cats, and music. Feel free to reach out!
             </p>
-            <div className="hero-text flex flex-col sm:flex-row mt-4 gap-3 sm:gap-4 items-center lg:items-start">
-              <div className="hero-text flex flex-col sm:flex-row mt-4 gap-3 sm:gap-4 items-center lg:items-start">
-                <button
-                  className="relative z-50 bg-black border-2 border-mainAccent rounded-4xl py-2 px-6 text-sm sm:text-base w-full sm:w-auto 
-                   transition-all duration-300 hover:shadow-[0_0_10px_rgba(255,0,255,0.7)]"
-                >
-                  Connect
-                </button>
-
-                <button
-                  className="bg-black border-2 border-secondaryAccent rounded-4xl py-2 px-6 text-sm  pointer-events-none sm:text-base w-full sm:w-auto 
-                     transition-all duration-100 hover:shadow-[0_0_10px_rgba(0,255,255,0.7)]"
-                >
-                  Resume
-                </button>
-              </div>
-            </div>
           </div>
 
-          <div className="hidden lg:block">
-            <div>
-              <Canvas
-                id="bear"
-                style={{
-                  position: "absolute",
-                  top: 70,
-                  right: -1000,
-                  width: 500,
-                  height: 500,
-                }}
-                className="cursor-pointer transform transition-transform duration-500 ease-out hover:scale-110"
-              >
-                <ambientLight intensity={0.4} />
-                <directionalLight position={[5, 5, 5]} />
-                <Model scale={4} />
-                <OrbitControls
-                  enableZoom={false}
-                  enablePan={false}
-                  autoRotate={true}
-                  autoRotateSpeed={3}
-                  enableRotate={true}
-                  maxPolarAngle={Math.PI / 1.5}
-                  minPolarAngle={Math.PI / 4}
-                />
-              </Canvas>
-            </div>
+          <div className="hidden lg:block pl-60">
+            <Canvas
+              id="bear"
+              style={{
+                position: "absolute",
+                top: 20,
+                right: -1000,
+                width: 900,
+                height: 900,
+              }}
+              className="cursor-pointer transform transition-transform duration-500 ease-out hover:scale-105"
+            >
+              <ambientLight intensity={0.4} />
+              <directionalLight position={[5, 5, 5]} />
+              <Model scale={4} rotation={[-0.3, -0.6, 0]} />
+              <OrbitControls
+                enableZoom={false}
+                enablePan={false}
+                autoRotate={true}
+                autoRotateSpeed={2}
+                enableRotate={true}
+                maxPolarAngle={Math.PI / 1.5}
+                minPolarAngle={Math.PI / 4}
+              />
+            </Canvas>
           </div>
         </div>
 

@@ -16,3 +16,7 @@ body {
 .nav-link {
   @apply px-3 py-1 rounded-4xl text-center;
 }
+
+.special {
+  @apply bg-gradient-to-r from-mainAccent to-secondaryAccent bg-clip-text py-2 text-transparent font-semibold;
+}
