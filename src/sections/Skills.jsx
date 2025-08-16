@@ -44,6 +44,7 @@ export default function Skills() {
     const headersContainer = headersRef.current;
     const secondHeadersContainer = secondHeadersRef.current;
 
+    gsap.set(headersContainer, { x: "0%" });
     gsap.to(headersContainer, {
       x: "-50%",
       duration: 10,
@@ -94,6 +95,26 @@ export default function Skills() {
             <h3 className="skills-header text-5xl font-semibold">FRAMEWORKS</h3>
             <h3 className="skills-header text-5xl font-semibold">+</h3>
             <h3 className="skills-header text-5xl font-semibold">LANGUAGES</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">SKILLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LIBRARIES</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">TOOLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">FRAMEWORKS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LANGUAGES</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">SKILLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LIBRARIES</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">TOOLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">FRAMEWORKS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LANGUAGES</h3>
           </div>
 
           <div className="absolute top-0 left-0 z-10 bg-gradient-to-r from-black to-transparent h-full w-32 pointer-events-none"></div>
@@ -116,6 +137,26 @@ export default function Skills() {
 
         <div className="relative overflow-hidden whitespace-nowrap mb-6 mt-6">
           <div ref={secondHeadersRef} className="flex gap-x-5 inline-flex">
+            <h3 className="skills-header text-5xl font-semibold">SKILLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LIBRARIES</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">TOOLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">FRAMEWORKS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LANGUAGES</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">SKILLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LIBRARIES</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">TOOLS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">FRAMEWORKS</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
+            <h3 className="skills-header text-5xl font-semibold">LANGUAGES</h3>
+            <h3 className="skills-header text-5xl font-semibold">+</h3>
             <h3 className="skills-header text-5xl font-semibold">SKILLS</h3>
             <h3 className="skills-header text-5xl font-semibold">+</h3>
             <h3 className="skills-header text-5xl font-semibold">LIBRARIES</h3>
