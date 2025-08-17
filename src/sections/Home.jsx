@@ -117,14 +117,14 @@ export default function Home() {
 
         <div className="flex flex-col lg:flex-row items-center lg:items-start">
           <div className="flex-1 text-center lg:text-left mb-8 lg:mb-0  pl-10 lg:pr-20">
-            <h1 className="hero-text text-space text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-5xl font-bold inline-block py-2  mb-2">
+            <h1 className="hero-text tracking-tighter text-space text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-5xl font-bold inline-block py-2  mb-2">
               Hi, I'm <span className="special">Nataly Tuong</span>. Welcome to
               my corner of creations!
             </h1>
-            <h2 className="hero-text custom-class font-bold mb-2 text-sm sm:text-base md:text-lg lg:text-2xl">
+            <h2 className="hero-text tracking-tighter custom-class font-bold mb-2 text-sm sm:text-base md:text-lg lg:text-2xl">
               aspiring software engineer & web developer
             </h2>
-            <p className="hero-text text-left text-sm sm:text-base md:text-lg lg:text-2xl xl:text-md lg:pr-10 pt-8 sm:pt-12 md:pt-16 lg:pt-20 leading-relaxed">
+            <p className="hero-text tracking-tighter text-left text-sm sm:text-base md:text-lg lg:text-2xl xl:text-md lg:pr-10 pt-8 sm:pt-12 md:pt-16 lg:pt-20 leading-relaxed relative z-20">
               ✧ദ്ദി( ˶^ᗜ^˶ ) Hi! Hello, I love exploring and{" "}
               <span class="text-mainAccent font-semibold">learning</span> about
               what tech has to offer. Specifically, I'm interested in creating

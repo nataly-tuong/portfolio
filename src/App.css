@@ -20,3 +20,7 @@ body {
 .special {
   @apply bg-gradient-to-r from-mainAccent to-secondaryAccent bg-clip-text py-2 text-transparent font-semibold;
 }
+
+.skills-style {
+  @apply text-5xl font-semibold tracking-wide;
+}
