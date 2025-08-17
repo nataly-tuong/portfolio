@@ -6,7 +6,7 @@ export default function Projects() {
         "My personal portfolio showcasing projects, skills, and interactive animations using React.js, GSAP, TailwindCSS, and modern frontend practices.",
       image: "/portfolio_screenshot.png",
       skills: ["React.js", "JavaScript", "HTML/CSS", "GSAP", "TailwindCSS"],
-      github: "https://github.com/lykaiio/portfolio",
+      github: "https://github.com/nataly-tuong/portfolio",
       website: "https://nataly-tuong.github.io/portfolio",
     },
     {
