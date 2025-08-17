@@ -1,20 +1,31 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 
+import javaLogo from "../assets/java-original.svg";
+import jsLogo from "../assets/javascript-original.svg";
+import htmlLogo from "../assets/html5-original.svg";
+import cssLogo from "../assets/css3-original.svg";
+import pythonLogo from "../assets/python-original.svg";
+import reactLogo from "../assets/react-original.svg";
+import gitLogo from "../assets/git-original.svg";
+import githubLogo from "../assets/github-original.svg";
+import viteLogo from "../assets/vite-original.svg";
+import gsapLogo from "../assets/gsap-white.svg";
+
 export default function Skills() {
   const skills = [
-    { name: "Java", logo: "/portfolio/assets/java-original.svg" },
-    { name: "JavaScript", logo: "/portfolio/assets/javascript-original.svg" },
-    { name: "HTML", logo: "/portfolio/assets/html5-original.svg" },
-    { name: "CSS", logo: "/portfolio/assets/css3-original.svg" },
-    { name: "Python", logo: "/portfolio/assets/python-original.svg" },
-    { name: "React.js", logo: "/portfolio/assets/react-original.svg" },
-    { name: "Git", logo: "/portfolio/assets/git-original.svg" },
-    { name: "GitHub", logo: "/portfolio/assets/github-original.svg" },
-    { name: "Vite", logo: "/portfolio/assets/vite-original.svg" },
-    { name: "GSAP", logo: "/portfolio/assets/gsap-white.svg" },
+    { name: "Java", logo: javaLogo },
+    { name: "JavaScript", logo: jsLogo },
+    { name: "HTML", logo: htmlLogo },
+    { name: "CSS", logo: cssLogo },
+    { name: "Python", logo: pythonLogo },
+    { name: "React.js", logo: reactLogo },
+    { name: "Git", logo: gitLogo },
+    { name: "GitHub", logo: githubLogo },
+    { name: "Vite", logo: viteLogo },
+    { name: "GSAP", logo: gsapLogo },
   ];
 
   const scrollRef = useRef();
