@@ -3,16 +3,16 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 
-import javaLogo from "../assets/java-original.svg";
-import jsLogo from "../assets/javascript-original.svg";
-import htmlLogo from "../assets/html5-original.svg";
-import cssLogo from "../assets/css3-original.svg";
-import pythonLogo from "../assets/python-original.svg";
-import reactLogo from "../assets/react-original.svg";
-import gitLogo from "../assets/git-original.svg";
-import githubLogo from "../assets/github-original.svg";
-import viteLogo from "../assets/vite-original.svg";
-import gsapLogo from "../assets/gsap-white.svg";
+import javaLogo from "/assets/java-original.svg";
+import jsLogo from "/assets/javascript-original.svg";
+import htmlLogo from "/assets/html5-original.svg";
+import cssLogo from "/assets/css3-original.svg";
+import pythonLogo from "/assets/python-original.svg";
+import reactLogo from "/assets/react-original.svg";
+import gitLogo from "/assets/git-original.svg";
+import githubLogo from "/assets/github-original.svg";
+import viteLogo from "/assets/vite-original.svg";
+import gsapLogo from "/assets/gsap-white.svg";
 
 export default function Skills() {
   const skills = [
