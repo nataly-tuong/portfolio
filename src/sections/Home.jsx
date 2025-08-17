@@ -124,7 +124,7 @@ export default function Home() {
             <h2 className="hero-text tracking-tighter custom-class font-bold mb-2 text-sm sm:text-base md:text-lg lg:text-2xl">
               aspiring software engineer & web developer
             </h2>
-            <p className="hero-text tracking-tighter text-left text-sm sm:text-base md:text-lg lg:text-2xl xl:text-md lg:pr-10 pt-8 sm:pt-12 md:pt-16 lg:pt-20 leading-relaxed relative z-20">
+            <p className="hero-text tracking-tighter text-left text-sm sm:text-base md:text-lg lg:text-2xl xl:text-md lg:pr-10 pt-8 sm:pt-12 md:pt-16 lg:pt-20 leading-relaxed relative z-60">
               ✧ദ്ദി( ˶^ᗜ^˶ ) Hi! Hello, I love exploring and{" "}
               <span className="text-mainAccent font-semibold">learning</span>{" "}
               about what tech has to offer. Specifically, I'm interested in
@@ -141,7 +141,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 h-20 sm:h-32 md:h-40 lg:h-100 bg-gradient-to-t from-black to-transparent z-40"></div>
+        <div className="absolute inset-x-0 bottom-0 h-20 sm:h-32 md:h-40 lg:h-100 bg-gradient-to-t from-black to-transparent z-30"></div>
       </div>
     </section>
   );

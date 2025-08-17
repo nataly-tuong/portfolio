@@ -46,7 +46,7 @@ export default function Skills() {
 
     const isMobile = window.innerWidth < 768;
     const distance = isMobile ? "-50%" : "-30%";
-    const duration = isMobile ? 20 : 15;
+    const duration = isMobile ? 10 : 4;
 
     gsap.set(headersContainer, { x: "0%" });
     gsap.to(headersContainer, {

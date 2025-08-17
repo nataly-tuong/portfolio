@@ -4,14 +4,12 @@ export default function Navbar() {
   const [selected, setSelected] = useState("Home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const links = ["Home", "Skills", "Projects", "About", "Contact"];
+  const links = ["Home", "Skills", "Projects", "Contact"];
 
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
-      if (window.innerWidth >= 768) {
-        setIsMenuOpen(false);
-      }
+      if (window.innerWidth >= 768) setIsMenuOpen(false);
     };
 
     checkMobile();
@@ -19,18 +17,37 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + window.innerHeight / 2;
+
+      for (let link of links) {
+        const section = document.getElementById(link);
+        if (!section) continue;
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < bottom) {
+          setSelected(link);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleLinkClick = (link) => {
     setSelected(link);
     setIsMenuOpen(false);
     const section = document.getElementById(link);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    if (section) section.scrollIntoView({ behavior: "smooth" });
   };
 
   if (isMobile) {
     return (
-      <div className="fixed top-5 right-5 z-50">
+      <div className="fixed top-5 right-5 z-90">
         <button
           className="text-white bg-black/50 backdrop-blur-md border border-white/30 rounded-full p-3 w-12 h-12 flex items-center justify-center"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
