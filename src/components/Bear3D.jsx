@@ -1,20 +1,66 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import { useState, useEffect } from "react";
 import Model from "./Model";
 
 export default function Bear3D() {
+  const [scale, setScale] = useState(4);
+  const [canvasSize, setCanvasSize] = useState({ width: 300, height: 300 });
+  const [position, setPosition] = useState({ top: 0, right: 0 });
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    const updateResponsiveSettings = () => {
+      const width = window.innerWidth;
+
+      if (width < 768) {
+        setScale(4);
+        setCanvasSize({ width: 300, height: 300 });
+        setPosition({ top: 0, right: 0 });
+        setIsMobile(true);
+      } else if (width < 1024) {
+        setScale(4);
+        setCanvasSize({ width: 450, height: 450 });
+        setPosition({ top: 20, right: -50 });
+        setIsMobile(false);
+      } else if (width < 1280) {
+        setScale(4);
+        setCanvasSize({ width: 600, height: 600 });
+        setPosition({ top: 20, right: -100 });
+        setIsMobile(false);
+      } else if (width < 1536) {
+        setScale(4);
+        setCanvasSize({ width: 750, height: 750 });
+        setPosition({ top: 20, right: -150 });
+        setIsMobile(false);
+      } else {
+        setScale(4);
+        setCanvasSize({ width: 900, height: 900 });
+        setPosition({ top: 20, right: -200 });
+        setIsMobile(false);
+      }
+    };
+
+    updateResponsiveSettings();
+    window.addEventListener("resize", updateResponsiveSettings);
+    return () => window.removeEventListener("resize", updateResponsiveSettings);
+  }, []);
+
   return (
-    <div className="hidden lg:block pl-60">
+    <div className={isMobile ? "w-full flex justify-center mt-8" : "block"}>
       <Canvas
         gl={{ antialias: true }}
         camera={{ fov: 45, position: [0, 0, 8] }}
         shadows
         style={{
-          width: "900px",
-          height: "900px",
-          position: "absolute",
-          top: 20,
-          right: -1000,
+          width: `${canvasSize.width}px`,
+          height: `${canvasSize.height}px`,
+          position: isMobile ? "relative" : "absolute",
+          top: isMobile ? 0 : position.top,
+          right: isMobile ? 0 : position.right,
+          left: isMobile ? "50%" : "auto",
+          transform: isMobile ? "translateX(-50%)" : "none",
+          zIndex: 30,
         }}
         id="bear"
       >
@@ -31,7 +77,6 @@ export default function Bear3D() {
           shadow-camera-top={10}
           shadow-camera-bottom={-10}
         />
-
         <directionalLight
           position={[-3, -3, -3]}
           intensity={0.4}
@@ -42,15 +87,12 @@ export default function Bear3D() {
           intensity={0.3}
           color="#bb4444"
         />
-
         <directionalLight
           position={[0, -8, 0]}
           intensity={0.2}
           color="#ffffff"
         />
-
-        <Model scale={4} rotation={[-0.3, -0.6, 0]} />
-
+        <Model scale={scale} rotation={[-0.3, -0.6, 0]} />
         <OrbitControls
           enableZoom={false}
           enablePan={false}

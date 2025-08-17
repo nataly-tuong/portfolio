@@ -12,7 +12,7 @@ export default function Home() {
   const star5 = useRef();
   const star6 = useRef();
   const star7 = useRef();
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const timeline = gsap.timeline({ repeat: 0 });
 
@@ -46,11 +46,18 @@ export default function Home() {
           right: -1000,
         },
         {
-          right: -240,
+          right: -200,
           ease: "power2.out",
           duration: 0.8,
         }
       );
+    } else {
+      timeline.from("#bear", {
+        y: 50,
+        opacity: 0,
+        ease: "power2.out",
+        duration: 0.8,
+      });
     }
 
     const starAnimationProps = {
@@ -85,7 +92,7 @@ export default function Home() {
 
   return (
     <section id="Home" className="relative">
-      <div className="bg-black bg-[url('Texturelabs_LensFX_130L.jpg')] bg-cover px-4 sm:px-8 md:px-16 lg:px-55 pb-7 sm:pb-32 md:pb-50 pt-16 sm:pt-32 md:pt-50 text-white bg-[position:center] sm:bg-[position:10%_center] relative overflow-hidden min-h-screen">
+      <div className="bg-black bg-[url('Texturelabs_LensFX_130L.jpg')] bg-cover px-4 sm:px-8 md:px-16 lg:px-55 pb-7 sm:pb-32 md:pb-50 pt-24 sm:pt-32 md:pt-50 text-white bg-[position:center] sm:bg-[position:10%_center] relative overflow-hidden min-h-screen">
         <div
           ref={star1}
           className="absolute top-8 right-4 sm:top-20  pointer-events-none sm:right-10 md:top-30 md:right-15 bg-[url('Texturelabs_LensFX_242S.jpg')] bg-cover bg-center mix-blend-plus-lighter w-8 h-8 sm:w-12 sm:h-12 md:w-40 md:h-40 brightness-125 animate-pulse z-50"
@@ -115,8 +122,8 @@ export default function Home() {
           className="absolute pointer-events-none bottom-20 right-1/3 sm:bottom-32 sm:right-1/4 md:bottom-50 md:right-1/3 bg-[url('Texturelabs_LensFX_242S.jpg')] bg-cover bg-center mix-blend-plus-lighter w-9 h-9 sm:w-12 sm:h-12 md:w-32 md:h-32 brightness-90 rotate-[75deg] animate-pulse z-50"
         ></div>
 
-        <div className="flex flex-col lg:flex-row items-center lg:items-start">
-          <div className="flex-1 text-center lg:text-left mb-8 lg:mb-0  pl-10 lg:pr-20">
+        <div className="flex flex-col md:flex-row items-center md:items-start">
+          <div className="flex-1 text-center md:text-left mb-8 md:mb-0 pl-10 pr-4 sm:pr-8 md:pr-16 lg:pr-32 xl:pr-40 2xl:pr-48">
             <h1 className="hero-text tracking-tighter text-space text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-5xl font-bold inline-block py-2  mb-2">
               Hi, I'm <span className="special">Nataly Tuong</span>. Welcome to
               my corner of creations!
@@ -136,10 +143,12 @@ export default function Home() {
             </p>
           </div>
 
-          <Bear3D />
+          <div className="w-full md:w-auto flex justify-center md:block">
+            <Bear3D />
+          </div>
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 h-20 sm:h-32 md:h-40 lg:h-100 bg-gradient-to-t from-black to-transparent pointer-events-none z-10"></div>
+        <div className="absolute inset-x-0 bottom-0 h-20 sm:h-32 md:h-40 lg:h-100 bg-gradient-to-t from-black to-transparent pointer-events-none z-40"></div>
       </div>
     </section>
   );
