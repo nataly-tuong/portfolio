@@ -1,16 +1,27 @@
 import React from "react";
 import { useGLTF } from "@react-three/drei";
-import modelUrl from "../assets/Model.glb"; // path is relative to Model.jsx
+import * as THREE from "three";
+
+import modelUrl from "../assets/Model.glb";
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF(modelUrl);
+  const { nodes } = useGLTF(modelUrl);
+
+  const material = nodes.mesh_0?.material;
+  if (material) {
+    material.flatShading = false;
+    material.metalness = 0;
+    material.roughness = 0.5;
+    material.needsUpdate = true;
+  }
+
   return (
     <group {...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.mesh_0.geometry}
-        material={nodes.mesh_0.material}
+        material={material}
       />
     </group>
   );

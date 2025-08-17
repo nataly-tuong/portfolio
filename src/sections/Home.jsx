@@ -1,10 +1,8 @@
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import Model from "../components/Model";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { useRef, useEffect, useState } from "react";
+import Bear3D from "../components/Bear3D";
 
 export default function Home() {
   const star1 = useRef();
@@ -128,41 +126,17 @@ export default function Home() {
             </h2>
             <p className="hero-text text-left text-sm sm:text-base md:text-lg lg:text-2xl xl:text-md lg:pr-10 pt-8 sm:pt-12 md:pt-16 lg:pt-20 leading-relaxed">
               ✧ദ്ദി( ˶^ᗜ^˶ ) Hi! Hello, I love exploring and{" "}
-              <span class="special">learning</span> about what tech has to
-              offer. Specifically, I'm interested in creating works with
-              thoughtful architecture and intent. I'm deeply{" "}
-              <span class="special">committed</span> to{" "}
-              <span class="special">innovation</span>. I'm a huge lover of
-              anything silly, cats, and music. Feel free to reach out!
+              <span class="text-mainAccent font-semibold">learning</span> about
+              what tech has to offer. Specifically, I'm interested in creating
+              works with thoughtful architecture and intent. I'm deeply{" "}
+              <span class="text-mainAccent font-semibold">committed</span> to{" "}
+              <span class="text-mainAccent font-semibold">innovation</span>. I'm
+              a huge lover of anything silly, cats, and music. Feel free to
+              reach out!
             </p>
           </div>
 
-          <div className="hidden lg:block pl-60">
-            <Canvas
-              id="bear"
-              style={{
-                position: "absolute",
-                top: 20,
-                right: -1000,
-                width: 900,
-                height: 900,
-              }}
-              className="cursor-pointer transform transition-transform duration-500 ease-out hover:scale-105"
-            >
-              <ambientLight intensity={0.8} />
-              <directionalLight position={[5, 5, 5]} />
-              <Model scale={4} rotation={[-0.3, -0.6, 0]} />
-              <OrbitControls
-                enableZoom={false}
-                enablePan={false}
-                autoRotate={true}
-                autoRotateSpeed={2}
-                enableRotate={true}
-                maxPolarAngle={Math.PI / 1.5}
-                minPolarAngle={Math.PI / 4}
-              />
-            </Canvas>
-          </div>
+          <Bear3D />
         </div>
 
         <div className="absolute inset-x-0 bottom-0 h-20 sm:h-32 md:h-40 lg:h-100 bg-gradient-to-t from-black to-transparent pointer-events-none z-10"></div>
