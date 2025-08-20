@@ -19,18 +19,18 @@ export default function Projects() {
       website: "https://nataly-tuong.github.io/santa-monica-sunsets",
     },
     {
-      title: "Note-taker",
+      title: "Simple-Notes",
       description:
-        "Welcome to Note-Taker, a user-friendly digital sticky notes application built with Python Tkinter! This GUI project focuses on enabling users, primarily students, to effortlessly create and manage convenient digital sticky notes.",
+        "Welcome to Simple-Notes, a user-friendly digital sticky notes application built with Python Tkinter! This GUI project focuses on enabling users, primarily students, to effortlessly create and manage convenient digital sticky notes.",
       image: "/note_taker.png",
       skills: ["Python", "Tkinter", "GUI"],
       github: "https://github.com/nataly-tuong/Note-Taker",
       website: null,
     },
     {
-      title: "Recycle-Game",
+      title: "Super-Recycler's Journey",
       description:
-        "Welcome to Recycle Game, an educational command-line adventure that teaches proper recycling practices! Help Super-Recycler defeat Dr. Pollution Wizard by correctly sorting recyclable and non-recyclable items.",
+        "Welcome to Super-Recycler's Journey, an educational command-line adventure that teaches proper recycling practices! Help Super-Recycler defeat Dr. Pollution Wizard by correctly sorting recyclable and non-recyclable items.",
       image: "/recycle_game.png",
       skills: ["Java", "OOP"],
       github: "https://github.com/nataly-tuong/Recycle-Game",
