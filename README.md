@@ -16,7 +16,7 @@ Welcome to my personal portfolio!! a showcase of web development projects, inter
 
 ## Tech Stack
 
-- **Frontend:** HTML5, CSS3, JavaScript (ES6+), React.js, TailwindCSS
+- **Frontend:** HTML5, CSS3, JavaScript (ES6+), React.js, TailwindCSS, ReactThree
 - **Build & Bundling:** Vite
 - **Design & UX:** Responsive design, animated transitions
 - **Assets:** Texturelabs images and textures
