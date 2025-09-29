@@ -1,6 +1,15 @@
 export default function Projects() {
   const projects = [
     {
+      title: "KokoSpeak",
+      description:
+        "A user-friendly interface for Koko, an open-source AI text-to-speech tool. KokoSpeak allows you to run Kokoro locally, providing a seamless experience for generating speech in multiple languages using Python.",
+      image: "/kokoro_screenshot.png",
+      skills: ["Python", "AI", "UI/UX", "Tailwind", "CSS", "HTML", "NiceGUI"],
+      github: "https://github.com/nataly-tuong/koko",
+      website: null,
+    },
+    {
       title: "Nataly's Portfolio",
       description:
         "My personal portfolio showcasing projects, skills, and interactive animations using React.js, GSAP, TailwindCSS, and modern frontend practices.",
