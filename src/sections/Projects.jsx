@@ -45,15 +45,6 @@ export default function Projects() {
       github: "https://github.com/nataly-tuong/Recycle-Game",
       website: null,
     },
-    {
-      title: "Kittyland",
-      description:
-        "Welcome to Kittyland, a simple HTML/CSS cat showcase featuring social media links for each feline friend! This is the original version that inspired Meowbook - built to practice basic web development fundamentals.",
-      image: "/kittyland.png",
-      skills: ["HTML", "CSS"],
-      github: "https://github.com/nataly-tuong/kittyland",
-      website: "https://nataly-tuong.github.io/kittyland",
-    },
   ];
 
   return (
