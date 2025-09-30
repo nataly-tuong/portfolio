@@ -13,6 +13,7 @@ import gitLogo from "/assets/git-original.svg";
 import githubLogo from "/assets/github-original.svg";
 import viteLogo from "/assets/vite-original.svg";
 import gsapLogo from "/assets/gsap-white.svg";
+import niceGUILogo from "/assets/niceGUILogo.png";
 
 export default function Skills() {
   const skills = [
@@ -26,6 +27,7 @@ export default function Skills() {
     { name: "GitHub", logo: githubLogo },
     { name: "Vite", logo: viteLogo },
     { name: "GSAP", logo: gsapLogo },
+    { name: "NiceGUI", logo: niceGUILogo },
   ];
 
   const scrollRef = useRef();

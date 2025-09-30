@@ -1,3 +1,5 @@
+import githubLogo from "/assets/github-original.svg";
+
 export default function Projects() {
   const projects = [
     {
@@ -87,6 +89,11 @@ export default function Projects() {
                           className="hover:text-red-500 transition-colors"
                         >
                           📎
+                          <img
+                            src={githubLogo}
+                            alt="github"
+                            className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+                          />
                         </a>
                       )}
                       {project.website && (
