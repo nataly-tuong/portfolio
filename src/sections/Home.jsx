@@ -58,7 +58,7 @@ export default function Home() {
         />
       </ShaderGradientCanvas>
 
-      <div className="absolute z-20 inset-x-0 top-1/2 -translate-y-1/2 hero-text h-full flex flex-col items-center justify-center border-dashed border-t-1 border-b-1 border-white/20 bg-black/50 backdrop-blur-md shadow-xl px-6 text-center rounded-none">
+      <div className="absolute z-20 inset-x-0 top-1/2 -translate-y-1/2 hero-text h-full flex flex-col items-center justify-center border-dashed border-t-1 border-b-1 border-white/20 bg-black/50 backdrop-blur-md shadow-xl px-9 text-center rounded-none">
         <h1 className="font-bodoni text-9xl sm:text-9xl font-bold text-white">
           Nataly Tuong
         </h1>

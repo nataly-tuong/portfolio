@@ -92,7 +92,7 @@ export default function Contact() {
         className="absolute top-1/2 left-3/4 w-12 h-12 sm:w-16 sm:h-16 bg-[url('/Texturelabs_LensFX_242S.jpg')] bg-cover bg-center mix-blend-plus-lighter brightness-140 animate-pulse z-50"
       />
 
-      <div className="bg-black border-2 border-white/30 rounded-2xl px-6 sm:px-8 py-6 flex flex-col sm:flex-row gap-6 sm:gap-8 shadow-lg w-full max-w-3xl justify-around relative z-10">
+      <div className="bg-black border-2 border-mainAccent rounded-2xl px-6 sm:px-8 py-6 flex flex-col sm:flex-row gap-6 sm:gap-8 shadow-lg w-full max-w-3xl justify-around relative z-10">
         <a
           href="https://www.linkedin.com/in/nataly-tuong/"
           target="_blank"

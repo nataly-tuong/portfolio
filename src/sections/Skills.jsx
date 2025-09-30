@@ -133,7 +133,7 @@ export default function Skills() {
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="mt-2 sm:mt-3 bg-gradient-to-b from-secondaryAccent to-mainAccent rounded-lg sm:rounded-xl md:rounded-2xl text-white font-semibold p-0.5"
+              className="mt-2 sm:mt-3 border-2 border-mainAccent rounded-2xl  text-white font-semibold p-0.5"
             >
               <span className="flex items-center gap-1 sm:gap-2 w-full bg-black text-white p-2 sm:p-2.5 rounded-lg sm:rounded-xl md:rounded-2xl">
                 <img

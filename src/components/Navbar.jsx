@@ -49,7 +49,7 @@ export default function Navbar() {
     return (
       <div className="fixed top-5 right-5 z-90">
         <button
-          className="text-white bg-black/50 backdrop-blur-md border border-white/30 rounded-full p-3 w-12 h-12 flex items-center justify-center"
+          className="text-white bg-black backdrop-blur-md border border-white/30 rounded-full p-3 w-12 h-12 flex items-center justify-center"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <div className="flex flex-col space-y-1">
@@ -72,7 +72,7 @@ export default function Navbar() {
         </button>
 
         <div
-          className={`absolute top-16 right-0 bg-black/90 backdrop-blur-md border border-white/30 rounded-2xl p-4 min-w-40 transition-all duration-300 ${
+          className={`absolute top-16 right-0 bg-black backdrop-blur-md border border-white/30 rounded-2xl p-4 min-w-40 transition-all duration-300 ${
             isMenuOpen
               ? "opacity-100 translate-y-0 pointer-events-auto"
               : "opacity-0 -translate-y-4 pointer-events-none"
@@ -96,17 +96,19 @@ export default function Navbar() {
 
   return (
     <div
-      className="fixed top-5 left-1/2 -translate-x-1/2
+      className="fixed top-0 left-1/2 -translate-x-1/2
                   flex space-x-5 z-50
-                  text-white tracking-tighter bg-black/50 px-3 py-2
-                  border border-white/30 rounded-4xl font-semibold
+                  text-white tracking-tighter bg-black px-3 py-5 w-full
+                  justify-center font-semibold
                   backdrop-blur-md"
     >
       {links.map((link) => (
         <button
           key={link}
-          className={`px-3 py-1 rounded-4xl text-center transition-colors ${
-            selected === link ? "bg-[#7E7E7E]" : "hover:bg-white/10"
+          className={`px-6 py-1 rounded-4xl text-center transition-colors ${
+            selected === link
+              ? "border-b border-2 border-red-500"
+              : "hover:bg-white/10"
           }`}
           onClick={() => handleLinkClick(link)}
         >
