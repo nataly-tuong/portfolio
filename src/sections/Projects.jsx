@@ -51,7 +51,7 @@ export default function Projects() {
     <section id="Projects" className="relative bg-black">
       <div className="absolute inset-0 bg-[url('/Texturelabs_Details_176M.jpg')] bg-cover bg-center z-0"></div>
       <div className="relative z-10 text-white py-12 sm:py-16 md:py-20 px-4 sm:px-8 lg:px-16">
-        <h3 className="text-5xl sm:text-6xl font-bold mb-12 bg-gradient-to-r from-red-500 via-white to-red-500 text-transparent bg-clip-text inline-block">
+        <h3 className="text-5xl pb-5 sm:text-6xl font-bold mb-12 bg-gradient-to-r from-red-500 via-white to-red-500 text-transparent bg-clip-text inline-block">
           Projects
         </h3>
         <div className="max-w-7xl mx-auto">
