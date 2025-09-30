@@ -115,7 +115,7 @@ export default function Skills() {
               .map((text, i) => (
                 <h3
                   key={i}
-                  className="skills-header skills-style text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold"
+                  className="skills-header font-bodoni skills-style text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold"
                 >
                   {text}
                 </h3>
@@ -160,7 +160,7 @@ export default function Skills() {
               .map((text, i) => (
                 <h3
                   key={i}
-                  className="skills-header skills-style text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold"
+                  className="skills-header font-bodoni skills-style text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold"
                 >
                   {text}
                 </h3>
