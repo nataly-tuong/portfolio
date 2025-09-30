@@ -1,11 +1,56 @@
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ShaderGradientCanvas, ShaderGradient } from "@shadergradient/react";
 
 export default function Home() {
+  const scope = useRef(null);
+  gsap.registerPlugin(useGSAP);
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline();
+      tl.set(".hero-text", { opacity: 0, y: 20 })
+        .to(".hero-text", {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power3.out",
+        })
+        .from(
+          ".hero-text > *",
+          {
+            opacity: 0,
+            y: 18,
+            filter: "blur(6px)",
+            duration: 0.7,
+            ease: "power3.out",
+            stagger: 0.12,
+          },
+          "-=0.2"
+        );
+    },
+    { scope }
+  );
+
   return (
-    <section id="Home" className="relative min-h-screen overflow-hidden text-white">
+    <section
+      ref={scope}
+      id="Home"
+      className="relative min-h-screen overflow-hidden text-white"
+    >
       <ShaderGradientCanvas
         className="absolute inset-0 z-0 pointer-events-none"
-        style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, width: "100%", height: "100%", backgroundColor: "#000000" }}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "#000000",
+        }}
       >
         <ShaderGradient
           control="query"
@@ -14,8 +59,12 @@ export default function Home() {
       </ShaderGradientCanvas>
 
       <div className="absolute z-20 inset-x-0 top-1/2 -translate-y-1/2 hero-text h-full flex flex-col items-center justify-center border-dashed border-t-1 border-b-1 border-white/20 bg-black/50 backdrop-blur-md shadow-xl px-6 text-center rounded-none">
-        <h1 className="font-bodoni text-9xl sm:text-9xl font-bold text-white">Nataly Tuong</h1>
-        <h2 className="font-noto text-2xl sm:text-4xl text-white/95 mt-2">Aspiring Software Engineer</h2>
+        <h1 className="font-bodoni text-9xl sm:text-9xl font-bold text-white">
+          Nataly Tuong
+        </h1>
+        <h2 className="font-noto text-2xl sm:text-4xl text-white/95 mt-2">
+          Aspiring Software Engineer
+        </h2>
       </div>
 
       <div className="absolute z-20 inset-x-0 bottom-0 h-20 sm:h-32 md:h-40 bg-gradient-to-t from-black to-transparent pointer-events-none" />
