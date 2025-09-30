@@ -3,7 +3,7 @@ export default function Projects() {
     {
       title: "KokoSpeak",
       description:
-        "A user-friendly interface for Koko, an open-source AI text-to-speech tool. KokoSpeak allows you to run Kokoro locally, providing a seamless experience for generating speech in multiple languages using Python.",
+        "A user-friendly interface for Kokoro, an open-source AI text-to-speech tool. KokoSpeak allows you to run Kokoro locally, providing a seamless experience for generating speech in multiple languages using Python.",
       image: "/kokoro_screenshot.png",
       skills: ["Python", "AI", "UI/UX", "Tailwind", "CSS", "HTML", "NiceGUI"],
       github: "https://github.com/nataly-tuong/koko",
