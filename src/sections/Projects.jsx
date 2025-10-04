@@ -88,11 +88,10 @@ export default function Projects() {
                           rel="noopener noreferrer"
                           className="hover:text-red-500 transition-colors"
                         >
-                          📎
                           <img
                             src={githubLogo}
                             alt="github"
-                            className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+                            className="bg-white rounded-2xl w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
                           />
                         </a>
                       )}
