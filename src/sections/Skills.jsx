@@ -16,7 +16,6 @@ import niceGUILogo from "/assets/niceGUILogo.png";
 import mongoDBLogo from "/assets/mongodb-original-wordmark.svg";
 import mySQLLogo from "/assets/mysql-original-wordmark.svg";
 import postmanLogo from "/assets/postman-icon.svg";
-import tailwindLogo from "/assets/tailwindcss-original.svg";
 
 export default function Skills() {
   const topMarqueeRef = useRef(null);
@@ -31,7 +30,7 @@ export default function Skills() {
         { name: "JavaScript", logo: jsLogo },
         { name: "HTML", logo: htmlLogo },
         { name: "CSS", logo: cssLogo },
-        { name: "Tailwind", logo: tailwindLogo },
+        { name: "Tailwind" },
         { name: "Vite", logo: viteLogo },
         { name: "GSAP", logo: gsapLogo },
       ],
@@ -100,12 +99,12 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="Skills" className="bg-black text-white py-20">
-      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
-        <div className="relative overflow-hidden w-[100vw] mb-16 left-1/2 -translate-x-1/2">
+    <section id="Skills" className="bg-black text-white py-16 md:py-20">
+      <div className="mx-auto max-w-7xl lg:max-w-[85rem] px-6 sm:px-10 lg:px-16">
+        <div className="relative overflow-hidden w-[100vw] mb-12 left-1/2 -translate-x-1/2">
           <div
             ref={topMarqueeRef}
-            className="flex w-max items-center gap-x-10 text-5xl md:text-7xl lg:text-8xl font-bodoni font-bold whitespace-nowrap"
+            className="flex w-max items-center gap-x-10 text-5xl md:text-6xl lg:text-7xl font-bodoni font-bold whitespace-nowrap"
           >
             {Array(3)
               .fill(marqueeItems)
@@ -118,19 +117,19 @@ export default function Skills() {
           <div className="absolute inset-y-0 right-0 w-32 sm:w-48 lg:w-64 bg-gradient-to-l from-black to-transparent pointer-events-none z-10" />
         </div>
 
-        <div className="relative w-full bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden border-2 border-white/20 shadow-lg transition-all duration-300 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)] p-10 sm:p-12">
+        <div className="relative w-full bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden border-2 border-white/20 shadow-lg transition-all duration-300 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)] p-8 sm:p-10">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 opacity-40"
             style={{
               background:
-                "radial-gradient(900px 350px at 30% 0%, rgba(239,68,68,0.2), transparent 70%), radial-gradient(700px 300px at 80% 100%, rgba(239,68,68,0.1), transparent 70%)",
+                "radial-gradient(900px 350px at 20% 0%, rgba(239,68,68,0.2), transparent 70%), radial-gradient(700px 300px at 80% 100%, rgba(239,68,68,0.1), transparent 70%)",
             }}
           />
 
-          <div className="relative space-y-12">
+          <div className="relative space-y-8">
             {sections.map((sec) => (
-              <div key={sec.title} className="space-y-6">
+              <div key={sec.title} className="space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-3">
                     <span className="text-red-500 font-mono font-bold">
@@ -165,7 +164,7 @@ export default function Skills() {
           </div>
         </div>
 
-        <div className="relative overflow-hidden w-[100vw] mt-16 left-1/2 -translate-x-1/2">
+        <div className="relative overflow-hidden w-[100vw] mt-12 left-1/2 -translate-x-1/2">
           <div
             ref={bottomMarqueeRef}
             className="flex w-max items-center gap-x-10 text-5xl md:text-7xl lg:text-8xl font-bodoni font-bold whitespace-nowrap"
