@@ -99,9 +99,9 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="Skills" className="bg-black text-white py-16 md:py-20">
+    <section id="Skills" className="bg-black text-white py-8 md:py-12">
       <div className="mx-auto max-w-7xl lg:max-w-[85rem] px-6 sm:px-10 lg:px-16">
-        <div className="relative overflow-hidden w-[100vw] mb-12 left-1/2 -translate-x-1/2">
+        <div className="relative overflow-hidden w-[100vw] mb-6 left-1/2 -translate-x-1/2">
           <div
             ref={topMarqueeRef}
             className="flex w-max items-center gap-x-10 text-5xl md:text-7xl lg:text-8xl font-bodoni font-bold whitespace-nowrap"
@@ -117,7 +117,7 @@ export default function Skills() {
           <div className="absolute inset-y-0 right-0 w-32 sm:w-48 lg:w-64 bg-gradient-to-l from-black to-transparent pointer-events-none z-10" />
         </div>
 
-        <div className="relative w-full bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden border-2 border-white/20 shadow-lg transition-all duration-300 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)] p-8 sm:p-10">
+        <div className="relative w-full bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden border-2 border-white/20 shadow-lg transition-all duration-300 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)] p-5 sm:p-6">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 opacity-40"
@@ -127,9 +127,9 @@ export default function Skills() {
             }}
           />
 
-          <div className="relative space-y-8">
+          <div className="relative space-y-4">
             {sections.map((sec) => (
-              <div key={sec.title} className="space-y-4">
+              <div key={sec.title} className="space-y-2">
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-3">
                     <span className="text-red-500 font-sans font-bold">
@@ -146,7 +146,7 @@ export default function Skills() {
                   {sec.items.map((item) => (
                     <span
                       key={item.name}
-                      className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm sm:text-base font-sans tracking-wide text-white/80 hover:bg-white/10 hover:border-white/30 transition-colors"
+                      className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm sm:text-base font-sans tracking-wide text-white/80 hover:bg-white/10 hover:border-white/30 transition-colors"
                     >
                       {item.logo && (
                         <img
@@ -164,7 +164,7 @@ export default function Skills() {
           </div>
         </div>
 
-        <div className="relative overflow-hidden w-[100vw] mt-12 left-1/2 -translate-x-1/2">
+        <div className="relative overflow-hidden w-[100vw] mt-6 left-1/2 -translate-x-1/2">
           <div
             ref={bottomMarqueeRef}
             className="flex w-max items-center gap-x-10 text-5xl md:text-7xl lg:text-8xl font-bodoni font-bold whitespace-nowrap"
