@@ -85,7 +85,7 @@ export default function Home() {
       </ShaderGradientCanvas>
 
       <div className="absolute z-20 inset-x-0 top-1/2 -translate-y-1/2 hero-text h-full flex flex-col items-center justify-center border-dashed border-t-1 border-b-1 border-white/20 bg-black/35 backdrop-blur-md shadow-xl px-9 text-center rounded-none">
-        <h1 className="font-bodoni text-9xl sm:text-9xl font-bold text-white">
+        <h1 className="font-bodoni text-glow text-9xl sm:text-9xl font-bold text-white">
           Nataly Tuong
         </h1>
         <h2 className="font-noto mt-8 text-2xl sm:text-4xl text-white/95 mt-2">
@@ -104,8 +104,6 @@ export default function Home() {
       scroll-arrow
       w-10 h-10
       text-red-500
-      drop-shadow-[0_0_10px_rgba(239,68,68,0.95)]
-      drop-shadow-[0_0_22px_rgba(239,68,68,0.65)]
     "
           fill="none"
           stroke="currentColor"
@@ -116,7 +114,7 @@ export default function Home() {
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            d="M6 11l6 6 6-6"
+            d="M6 12l6 6 6-6"
           />
         </svg>
       </a>
