@@ -11,7 +11,6 @@ export default function Navbar() {
       setIsMobile(window.innerWidth < 768);
       if (window.innerWidth >= 768) setIsMenuOpen(false);
     };
-
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
@@ -20,20 +19,17 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPos = window.scrollY + window.innerHeight / 2;
-
       for (let link of links) {
         const section = document.getElementById(link);
         if (!section) continue;
         const top = section.offsetTop;
         const bottom = top + section.offsetHeight;
-
         if (scrollPos >= top && scrollPos < bottom) {
           setSelected(link);
           break;
         }
       }
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -47,7 +43,7 @@ export default function Navbar() {
 
   if (isMobile) {
     return (
-      <div className="fixed top-5 right-5 z-90">
+      <div className="fixed top-5 right-5 z-[100]">
         <button
           className="text-white bg-black backdrop-blur-md border border-red-500 rounded-full p-3 w-12 h-12 flex items-center justify-center"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -70,7 +66,6 @@ export default function Navbar() {
             ></div>
           </div>
         </button>
-
         <div
           className={`absolute top-16 right-0 bg-black backdrop-blur-md border border-red-500 rounded-2xl p-4 min-w-40 transition-all duration-300 ${
             isMenuOpen
@@ -97,7 +92,7 @@ export default function Navbar() {
   return (
     <div
       className="fixed top-0 left-1/2 -translate-x-1/2
-                  flex space-x-5 z-50
+                  flex space-x-5 z-[100]
                   text-white tracking-tighter bg-black px-3 py-5 w-full
                   justify-center font-semibold
                   backdrop-blur-md"

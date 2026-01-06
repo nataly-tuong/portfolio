@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
 
 import javaLogo from "/assets/java-original.svg";
 import jsLogo from "/assets/javascript-original.svg";
@@ -17,85 +16,58 @@ import niceGUILogo from "/assets/niceGUILogo.png";
 import mongoDBLogo from "/assets/mongodb-original-wordmark.svg";
 import mySQLLogo from "/assets/mysql-original-wordmark.svg";
 import postmanLogo from "/assets/postman-icon.svg";
+import tailwindLogo from "/assets/tailwindcss-original.svg";
 
 export default function Skills() {
-  const skills = [
-    { name: "Java", logo: javaLogo },
-    { name: "JavaScript", logo: jsLogo },
-    { name: "HTML", logo: htmlLogo },
-    { name: "CSS", logo: cssLogo },
-    { name: "Python", logo: pythonLogo },
-    { name: "React.js", logo: reactLogo },
-    { name: "Git", logo: gitLogo },
-    { name: "GitHub", logo: githubLogo },
-    { name: "Vite", logo: viteLogo },
-    { name: "GSAP", logo: gsapLogo },
-    { name: "NiceGUI", logo: niceGUILogo },
-    { name: "MongoDB", logo: mongoDBLogo },
-    { name: "MySQL", logo: mySQLLogo },
-    { name: "Postman", logo: postmanLogo },
+  const topMarqueeRef = useRef(null);
+  const bottomMarqueeRef = useRef(null);
+
+  const sections = [
+    {
+      title: "Frontend",
+      icon: "<>",
+      items: [
+        { name: "React", logo: reactLogo },
+        { name: "JavaScript", logo: jsLogo },
+        { name: "HTML", logo: htmlLogo },
+        { name: "CSS", logo: cssLogo },
+        { name: "Tailwind", logo: tailwindLogo },
+        { name: "Vite", logo: viteLogo },
+        { name: "GSAP", logo: gsapLogo },
+      ],
+    },
+    {
+      title: "Backend",
+      icon: "<>",
+      items: [
+        { name: "Java", logo: javaLogo },
+        { name: "Python", logo: pythonLogo },
+        { name: "NiceGUI", logo: niceGUILogo },
+      ],
+    },
+    {
+      title: "Database",
+      icon: "<>",
+      items: [
+        { name: "MongoDB", logo: mongoDBLogo },
+        { name: "MySQL", logo: mySQLLogo },
+      ],
+    },
+    {
+      title: "Tools",
+      icon: "<>",
+      items: [
+        { name: "Git", logo: gitLogo },
+        { name: "GitHub", logo: githubLogo },
+        { name: "Postman", logo: postmanLogo },
+      ],
+    },
   ];
 
-  const programmingLanguages = [
-    { name: "Java", logo: javaLogo },
-    { name: "JavaScript", logo: jsLogo },
-    { name: "Python", logo: jsLogo },
-    { name: "C", logo: jsLogo },
-    { name: "SQL", logo: jsLogo },
-  ];
-
-  const scrollRef = useRef();
-  const headersRef = useRef();
-  const secondHeadersRef = useRef();
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  useGSAP(() => {
-    const boxes = gsap.utils.toArray(scrollRef.current.children);
-    gsap.fromTo(
-      boxes,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.2,
-        duration: 0.6,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: scrollRef.current,
-          start: "top 80%",
-        },
-      }
-    );
-
-    const headersContainer = headersRef.current;
-    const secondHeadersContainer = secondHeadersRef.current;
-
-    const isMobile = window.innerWidth < 768;
-    const distance = isMobile ? "-50%" : "-30%";
-    const duration = isMobile ? 10 : 4;
-
-    gsap.set(headersContainer, { x: "0%" });
-    gsap.to(headersContainer, {
-      x: distance,
-      duration: duration,
-      ease: "none",
-      repeat: -1,
-    });
-
-    gsap.set(secondHeadersContainer, { x: isMobile ? "-50%" : "-30%" });
-    gsap.to(secondHeadersContainer, {
-      x: "0%",
-      duration: duration,
-      ease: "none",
-      repeat: -1,
-    });
-  }, []);
-
-  const headerItems = [
-    "SKILLS",
+  const marqueeItems = [
+    "TECHNOLOGIES",
     "+",
-    "LIBRARIES",
+    "SKILLS",
     "+",
     "TOOLS",
     "+",
@@ -103,88 +75,110 @@ export default function Skills() {
     "+",
     "LANGUAGES",
     "+",
-    "TECHNICALITIES",
   ];
 
+  useGSAP(() => {
+    const isMobile = window.innerWidth < 768;
+    const distance = isMobile ? "-50%" : "-30%";
+    const duration = isMobile ? 10 : 4;
+
+    gsap.set(topMarqueeRef.current, { x: "0%" });
+    gsap.to(topMarqueeRef.current, {
+      x: distance,
+      duration: duration,
+      ease: "none",
+      repeat: -1,
+    });
+
+    gsap.set(bottomMarqueeRef.current, { x: isMobile ? "-50%" : "-30%" });
+    gsap.to(bottomMarqueeRef.current, {
+      x: "0%",
+      duration: duration,
+      ease: "none",
+      repeat: -1,
+    });
+  }, []);
+
   return (
-    <section id="Skills">
-      <div className="bg-black w-full relative text-white px-4 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16">
-        <div
-          className="absolute top-2 right-4 sm:top-2 sm:right-8
-                     bg-[url('Texturelabs_LensFX_242S.jpg')]
-                     bg-cover bg-center
-                     mix-blend-plus-lighter
-                     w-12 h-12 sm:w-16 sm:h-16
-                     brightness-120
-                     rotate-[120deg]
-                     animate-pulse z-50"
-        ></div>
-
-        <div className="relative overflow-hidden whitespace-nowrap mb-6">
+    <section id="Skills" className="bg-black text-white py-20">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+        <div className="relative overflow-hidden w-[100vw] mb-16 left-1/2 -translate-x-1/2">
           <div
-            ref={headersRef}
-            className="flex gap-x-4 sm:gap-x-6 md:gap-x-8 inline-flex"
+            ref={topMarqueeRef}
+            className="flex w-max items-center gap-x-10 text-5xl md:text-7xl lg:text-8xl font-bodoni font-bold whitespace-nowrap"
           >
             {Array(3)
-              .fill(headerItems)
+              .fill(marqueeItems)
               .flat()
               .map((text, i) => (
-                <h3
-                  key={i}
-                  className="skills-header font-bodoni skills-style text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold"
-                >
-                  {text}
-                </h3>
+                <span key={i}>{text}</span>
               ))}
           </div>
-
-          <div className="absolute top-0 left-0 z-10 bg-gradient-to-r from-black to-transparent h-full w-12 sm:w-24 pointer-events-none"></div>
-          <div className="absolute top-0 right-0 z-10 bg-gradient-to-l from-black to-transparent h-full w-12 sm:w-24 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-32 sm:w-48 lg:w-64 bg-gradient-to-r from-black to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-y-0 right-0 w-32 sm:w-48 lg:w-64 bg-gradient-to-l from-black to-transparent pointer-events-none z-10" />
         </div>
 
-        <div
-          className="skill-box flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6"
-          ref={scrollRef}
-        >
-          {skills.map((skill) => (
-            <div
-              key={skill.name}
-              className="mt-2 sm:mt-3 border-2 border-mainAccent rounded-2xl  text-white font-semibold p-0.5"
-            >
-              <span className="flex items-center gap-1 sm:gap-2 w-full bg-black text-white p-2 sm:p-2.5 rounded-lg sm:rounded-xl md:rounded-2xl">
-                <img
-                  src={skill.logo}
-                  alt={skill.name}
-                  className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
-                />
-                <span className="text-xs sm:text-sm md:text-base">
-                  {skill.name}
-                </span>
-              </span>
-            </div>
-          ))}
-        </div>
-
-        <div className="relative overflow-hidden whitespace-nowrap mt-6">
+        <div className="relative w-full bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden border-2 border-white/20 shadow-lg transition-all duration-300 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)] p-10 sm:p-12">
           <div
-            ref={secondHeadersRef}
-            className="flex gap-x-4 sm:gap-x-6 md:gap-x-8 inline-flex"
+            aria-hidden
+            className="pointer-events-none absolute inset-0 opacity-40"
+            style={{
+              background:
+                "radial-gradient(900px 350px at 30% 0%, rgba(239,68,68,0.2), transparent 70%), radial-gradient(700px 300px at 80% 100%, rgba(239,68,68,0.1), transparent 70%)",
+            }}
+          />
+
+          <div className="relative space-y-12">
+            {sections.map((sec) => (
+              <div key={sec.title} className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-3">
+                    <span className="text-red-500 font-mono font-bold">
+                      {sec.icon}
+                    </span>
+                    <h4 className="text-red-500 font-mono tracking-[0.2em] uppercase text-sm sm:text-lg font-bold">
+                      {sec.title}
+                    </h4>
+                  </div>
+                  <div className="h-px flex-1 bg-white/10" />
+                </div>
+
+                <div className="flex flex-wrap gap-4">
+                  {sec.items.map((item) => (
+                    <span
+                      key={item.name}
+                      className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm sm:text-base font-mono tracking-wide text-white/80 hover:bg-white/10 hover:border-white/30 transition-colors"
+                    >
+                      {item.logo && (
+                        <img
+                          src={item.logo}
+                          alt={item.name}
+                          className="h-5 w-5 object-contain"
+                        />
+                      )}
+                      {item.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="relative overflow-hidden w-[100vw] mt-16 left-1/2 -translate-x-1/2">
+          <div
+            ref={bottomMarqueeRef}
+            className="flex w-max items-center gap-x-10 text-5xl md:text-7xl lg:text-8xl font-bodoni font-bold whitespace-nowrap"
           >
             {Array(3)
-              .fill(headerItems)
+              .fill(marqueeItems)
               .flat()
               .map((text, i) => (
-                <h3
-                  key={i}
-                  className="skills-header font-bodoni skills-style text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold"
-                >
-                  {text}
-                </h3>
+                <span key={i}>{text}</span>
               ))}
           </div>
-
-          <div className="absolute top-0 left-0 z-10 bg-gradient-to-r from-black to-transparent h-full w-12 sm:w-24 pointer-events-none"></div>
-          <div className="absolute top-0 right-0 z-10 bg-gradient-to-l from-black to-transparent h-full w-12 sm:w-24 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-32 sm:w-48 lg:w-64 bg-gradient-to-r from-black to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-y-0 right-0 w-32 sm:w-48 lg:w-64 bg-gradient-to-l from-black to-transparent pointer-events-none z-10" />
         </div>
       </div>
     </section>

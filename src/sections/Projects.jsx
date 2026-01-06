@@ -66,16 +66,25 @@ export default function Projects() {
             {projects.map((project, idx) => (
               <div
                 key={idx}
-                className="bg-black rounded-2xl overflow-hidden border-2 border-white/20 shadow-lg transition-all duration-300 hover:border-red-500 hover:shadow-[0_0_20px_red] w-full"
+                className="relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden border-2 border-white/20 shadow-lg transition-all duration-300 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)] w-full"
               >
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-40"
+                  style={{
+                    background:
+                      "radial-gradient(900px 350px at 25% 0%, rgba(239,68,68,0.8), transparent 70%), radial-gradient(700px 300px at 80% 100%, rgba(239,68,68,0.1), transparent 70%)",
+                  }}
+                />
+
                 {project.image && (
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full object-cover aspect-[4/3] sm:aspect-[16/9]"
+                    className="relative w-full object-cover aspect-[4/3] sm:aspect-[16/9]"
                   />
                 )}
-                <div className="p-6 flex flex-col gap-4">
+                <div className="relative p-6 flex flex-col gap-4">
                   <div className="flex items-center justify-between">
                     <h4 className="text-xl sm:text-2xl font-semibold">
                       {project.title}

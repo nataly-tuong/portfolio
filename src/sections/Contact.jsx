@@ -92,58 +92,69 @@ export default function Contact() {
         className="absolute top-1/2 left-3/4 w-12 h-12 sm:w-16 sm:h-16 bg-[url('/Texturelabs_LensFX_242S.jpg')] bg-cover bg-center mix-blend-plus-lighter brightness-140 animate-pulse z-50"
       />
 
-      <div className="bg-black border-2 border-mainAccent rounded-2xl px-6 sm:px-8 py-6 flex flex-col sm:flex-row gap-6 sm:gap-8 shadow-lg w-full max-w-3xl justify-around relative z-10">
-        <a
-          href="https://www.linkedin.com/in/nataly-tuong/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex flex-col items-center gap-2 hover:text-mainAccent transition-colors"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-10 w-10"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.25h-3v-5c0-1.379-1.121-2.5-2.5-2.5s-2.5 1.121-2.5 2.5v5h-3v-10h3v1.354c.666-1.016 2.208-1.354 3.5-1.354 2.485 0 4.5 2.015 4.5 4.5v5.5z" />
-          </svg>
-          <span class="font-semibold">LinkedIn</span>
-          <span className="text-gray-300 text-sm">/nataly-tuong/</span>
-        </a>
+      <div className="relative w-full bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden border-2 border-white/20 shadow-lg transition-all duration-300 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)] px-6 sm:px-8 py-6 max-w-3xl z-10">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-40"
+          style={{
+            background:
+              "radial-gradient(600px 350px at 15% 2%, rgba(239,68,68,0.2), transparent 70%), radial-gradient(700px 300px at 80% 100%, rgba(239,68,68,0.1), transparent 70%)",
+          }}
+        />
 
-        <a
-          href="mailto:ntuong1117@gmail.com"
-          className="flex flex-col items-center gap-2 hover:text-mainAccent transition-colors"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-10 w-10"
-            fill="currentColor"
-            viewBox="0 0 24 24"
+        <div className="relative flex flex-col sm:flex-row gap-6 sm:gap-8 justify-around">
+          <a
+            href="https://www.linkedin.com/in/nataly-tuong/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-2 hover:text-red-500 transition-colors"
           >
-            <path d="M12 13.065l-11-7v14h22v-14l-11 7zm0-2.13l11-7h-22l11 7z" />
-          </svg>
-          <span class="font-semibold">Email</span>
-          <span className="text-gray-300 text-sm">ntuong1117@gmail.com</span>
-        </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-10 w-10"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.25h-3v-5c0-1.379-1.121-2.5-2.5-2.5s-2.5 1.121-2.5 2.5v5h-3v-10h3v1.354c.666-1.016 2.208-1.354 3.5-1.354 2.485 0 4.5 2.015 4.5 4.5v5.5z" />
+            </svg>
+            <span className="font-semibold">LinkedIn</span>
+            <span className="text-gray-300 text-sm">/nataly-tuong/</span>
+          </a>
 
-        <a
-          href="https://github.com/nataly-tuong"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex flex-col items-center gap-2 hover:text-mainAccent transition-colors"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-10 w-10"
-            fill="currentColor"
-            viewBox="0 0 24 24"
+          <a
+            href="mailto:ntuong1117@gmail.com"
+            className="flex flex-col items-center gap-2 hover:text-red-500 transition-colors"
           >
-            <path d="M12 0c-6.627 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.415-4.033-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.304.76-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.31.467-2.381 1.235-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.289-1.552 3.296-1.23 3.296-1.23.654 1.653.243 2.874.12 3.176.77.84 1.233 1.911 1.233 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.814 1.102.814 2.222v3.293c0 .319.218.694.825.576 4.765-1.586 8.2-6.082 8.2-11.384 0-6.627-5.373-12-12-12z" />
-          </svg>
-          <span class="font-semibold">GitHub</span>
-          <span className="text-gray-300 text-sm">@nataly-tuong</span>
-        </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-10 w-10"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 13.065l-11-7v14h22v-14l-11 7zm0-2.13l11-7h-22l11 7z" />
+            </svg>
+            <span className="font-semibold">Email</span>
+            <span className="text-gray-300 text-sm">ntuong1117@gmail.com</span>
+          </a>
+
+          <a
+            href="https://github.com/nataly-tuong"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-2 hover:text-red-500 transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-10 w-10"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 0c-6.627 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.415-4.033-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.304.76-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.31.467-2.381 1.235-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.289-1.552 3.296-1.23 3.296-1.23.654 1.653.243 2.874.12 3.176.77.84 1.233 1.911 1.233 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.814 1.102.814 2.222v3.293c0 .319.218.694.825.576 4.765-1.586 8.2-6.082 8.2-11.384 0-6.627-5.373-12-12-12z" />
+            </svg>
+            <span className="font-semibold">GitHub</span>
+            <span className="text-gray-300 text-sm">@nataly-tuong</span>
+          </a>
+        </div>
       </div>
     </section>
   );
