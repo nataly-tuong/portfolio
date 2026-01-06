@@ -85,7 +85,7 @@ export default function Home() {
       </ShaderGradientCanvas>
 
       <div className="absolute z-20 inset-x-0 top-1/2 -translate-y-1/2 hero-text h-full flex flex-col items-center justify-center border-dashed border-t-1 border-b-1 border-white/20 bg-black/35 backdrop-blur-md shadow-xl px-9 text-center rounded-none">
-        <h1 className="font-bodoni text-glow text-9xl sm:text-9xl font-bold text-white">
+        <h1 className="font-bodoni text-[clamp(7rem,8vw,7.5rem)] text-glow text-9xl sm:text-9xl font-bold text-white">
           Nataly Tuong
         </h1>
         <h2 className="font-noto mt-8 text-2xl sm:text-4xl text-white/95 mt-2">
@@ -94,7 +94,7 @@ export default function Home() {
       </div>
 
       <div
-        className="absolute z-20 left-0 right-0 sm:left-0 sm:right-0
+        className="absolute z-20 left-5 right- sm:left-0 sm:right-0
  bottom-0 h-20 sm:h-32 md:h-40 bg-gradient-to-t from-black to-transparent pointer-events-none"
       />
       <a
