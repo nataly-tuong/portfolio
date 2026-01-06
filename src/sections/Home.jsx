@@ -83,7 +83,7 @@ export default function Home() {
         <h1 className="font-bodoni text-[clamp(7rem,8vw,7.5rem)] text-glow text-9xl sm:text-9xl font-bold text-white">
           Nataly Tuong
         </h1>
-        <h2 className="font-noto mt-8 text-2xl sm:text-4xl text-white/95 mt-2">
+        <h2 className="font-bodoni mt-8 text-2xl sm:text-4xl text-white/95 mt-2 italic">
           Aspiring Software Engineer
         </h2>
       </div>
