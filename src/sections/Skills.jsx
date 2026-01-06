@@ -30,6 +30,14 @@ export default function Skills() {
     { name: "NiceGUI", logo: niceGUILogo },
   ];
 
+  const programmingLanguages = [
+    { name: "Java", logo: javaLogo },
+    { name: "JavaScript", logo: jsLogo },
+    { name: "Python", logo: jsLogo },
+    { name: "C", logo: jsLogo },
+    { name: "SQL", logo: jsLogo },
+  ]
+
   const scrollRef = useRef();
   const headersRef = useRef();
   const secondHeadersRef = useRef();

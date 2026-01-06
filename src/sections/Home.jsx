@@ -29,6 +29,32 @@ export default function Home() {
           },
           "-=0.2"
         );
+
+      gsap.set(".scroll-hint", { opacity: 0 });
+
+      gsap.to(".scroll-hint", {
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        delay: 0.6,
+      });
+
+      gsap.to(".scroll-arrow", {
+        y: 15,
+        duration: 0.8,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+      });
+
+      gsap.to(".scroll-arrow", {
+        filter:
+          "drop-shadow(0 0 18px rgba(239,68,68,1)) drop-shadow(0 0 42px rgba(239,68,68,0.75))",
+        duration: 1.2,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+      });
     },
     { scope }
   );
@@ -62,12 +88,38 @@ export default function Home() {
         <h1 className="font-bodoni text-9xl sm:text-9xl font-bold text-white">
           Nataly Tuong
         </h1>
-        <h2 className="font-noto text-2xl sm:text-4xl text-white/95 mt-2">
+        <h2 className="font-noto mt-8 text-2xl sm:text-4xl text-white/95 mt-2">
           Aspiring Software Engineer
         </h2>
       </div>
 
       <div className="absolute z-20 inset-x-0 bottom-0 h-20 sm:h-32 md:h-40 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+      <a
+        href="#About"
+        aria-label="Scroll to About"
+        className="scroll-hint absolute bottom-13 left-1/2 -translate-x-1/2 z-50"
+      >
+        <svg
+          className="
+      scroll-arrow
+      w-10 h-10
+      text-red-500
+      drop-shadow-[0_0_10px_rgba(239,68,68,0.95)]
+      drop-shadow-[0_0_22px_rgba(239,68,68,0.65)]
+    "
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.6"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v10" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6 11l6 6 6-6"
+          />
+        </svg>
+      </a>
     </section>
   );
 }
