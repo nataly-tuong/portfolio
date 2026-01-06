@@ -57,7 +57,7 @@ export default function Projects() {
         bg-[linear-gradient(to_right,#ffffff20_1px,transparent_1px),linear-gradient(to_bottom,#ffffff20_1px,transparent_1px)]
         [background-size:48px_48px]"
       />
-      <div className="relative z-10 text-white py-12 sm:py-16 md:py-20 px-4 sm:px-8 lg:px-16">
+      <div className="relative z-10 text-white py-12 sm:py-16 md:py-20 px-8 sm:px-15 lg:px-16">
         <h3 className="text-5xl text-white pb-5 font-bodoni sm:text-6xl font-bold mb-12">
           Projects
         </h3>

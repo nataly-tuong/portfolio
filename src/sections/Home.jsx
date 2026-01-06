@@ -93,7 +93,10 @@ export default function Home() {
         </h2>
       </div>
 
-      <div className="absolute z-20 inset-x-0 bottom-0 h-20 sm:h-32 md:h-40 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+      <div
+        className="absolute z-20 left-0 right-0 sm:left-0 sm:right-0
+ bottom-0 h-20 sm:h-32 md:h-40 bg-gradient-to-t from-black to-transparent pointer-events-none"
+      />
       <a
         href="#About"
         aria-label="Scroll to About"
@@ -103,7 +106,7 @@ export default function Home() {
           className="
       scroll-arrow
       w-10 h-10
-      text-red-500
+      text-red-500 text-glow-red
     "
           fill="none"
           stroke="currentColor"

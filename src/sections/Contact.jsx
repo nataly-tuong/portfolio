@@ -65,7 +65,7 @@ export default function Contact() {
   return (
     <section
       id="Contact"
-      className="relative flex flex-col items-center text-white py-12 px-6 sm:py-16 sm:px-8 md:py-20 md:px-16"
+      className="relative flex flex-col items-center text-white py-12 px-8 sm:py-16 sm:px-8 md:py-20 md:px-16"
     >
       <h3 className="self-start font-bodoni text-6xl sm:text-5xl md:text-6xl font-bold mb-12 text-white">
         Contact
