@@ -104,7 +104,7 @@ export default function Skills() {
         <div className="relative overflow-hidden w-[100vw] mb-6 left-1/2 -translate-x-1/2">
           <div
             ref={topMarqueeRef}
-            className="flex w-max items-center gap-x-10 text-5xl md:text-7xl lg:text-8xl font-bodoni font-bold whitespace-nowrap"
+            className="flex w-max items-center gap-x-10 text-5xl md:text-6xl lg:text-6xl font-bodoni font-bold whitespace-nowrap"
           >
             {Array(3)
               .fill(marqueeItems)
