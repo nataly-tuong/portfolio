@@ -104,7 +104,7 @@ export default function Skills() {
         <div className="relative overflow-hidden w-[100vw] mb-12 left-1/2 -translate-x-1/2">
           <div
             ref={topMarqueeRef}
-            className="flex w-max items-center gap-x-10 text-5xl md:text-6xl lg:text-7xl font-bodoni font-bold whitespace-nowrap"
+            className="flex w-max items-center gap-x-10 text-5xl md:text-7xl lg:text-8xl font-bodoni font-bold whitespace-nowrap"
           >
             {Array(3)
               .fill(marqueeItems)
@@ -132,10 +132,10 @@ export default function Skills() {
               <div key={sec.title} className="space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-3">
-                    <span className="text-red-500 font-mono font-bold">
+                    <span className="text-red-500 font-sans font-bold">
                       {sec.icon}
                     </span>
-                    <h4 className="text-red-500 font-mono tracking-[0.2em] uppercase text-sm sm:text-lg font-bold">
+                    <h4 className="text-red-500 font-sans tracking-[0.2em] uppercase text-sm sm:text-lg font-bold">
                       {sec.title}
                     </h4>
                   </div>
@@ -146,7 +146,7 @@ export default function Skills() {
                   {sec.items.map((item) => (
                     <span
                       key={item.name}
-                      className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm sm:text-base font-mono tracking-wide text-white/80 hover:bg-white/10 hover:border-white/30 transition-colors"
+                      className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm sm:text-base font-sans tracking-wide text-white/80 hover:bg-white/10 hover:border-white/30 transition-colors"
                     >
                       {item.logo && (
                         <img
