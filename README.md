@@ -4,7 +4,7 @@ Welcome to my personal portfolio!! a showcase of web development projects, inter
 
 ## Live Demo
 
-🌐 [View Live Portfolio](https://portfolio-nine-topaz-66.vercel.app/)
+🌐 [View Live Portfolio](https://nataly-tuong.vercel.app/)
 
 ## Features
 
@@ -37,5 +37,7 @@ cd portfolio
 npm install
 npm run dev
 ```
+
 # portfolio2
+
 # portfolio2
