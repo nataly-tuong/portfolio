@@ -14,6 +14,9 @@ import githubLogo from "/assets/github-original.svg";
 import viteLogo from "/assets/vite-original.svg";
 import gsapLogo from "/assets/gsap-white.svg";
 import niceGUILogo from "/assets/niceGUILogo.png";
+import mongoDBLogo from "/assets/mongodb-original-wordmark.svg";
+import mySQLLogo from "/assets/mysql-original-wordmark.svg";
+import postmanLogo from "/assets/postman-icon.svg";
 
 export default function Skills() {
   const skills = [
@@ -28,6 +31,9 @@ export default function Skills() {
     { name: "Vite", logo: viteLogo },
     { name: "GSAP", logo: gsapLogo },
     { name: "NiceGUI", logo: niceGUILogo },
+    { name: "MongoDB", logo: mongoDBLogo },
+    { name: "MySQL", logo: mySQLLogo },
+    { name: "Postman", logo: postmanLogo },
   ];
 
   const programmingLanguages = [
@@ -36,7 +42,7 @@ export default function Skills() {
     { name: "Python", logo: jsLogo },
     { name: "C", logo: jsLogo },
     { name: "SQL", logo: jsLogo },
-  ]
+  ];
 
   const scrollRef = useRef();
   const headersRef = useRef();
