@@ -16,6 +16,7 @@ import niceGUILogo from "/assets/niceGUILogo.png";
 import mongoDBLogo from "/assets/mongodb-original-wordmark.svg";
 import mySQLLogo from "/assets/mysql-original-wordmark.svg";
 import postmanLogo from "/assets/postman-icon.svg";
+import kotlinLogo from "/assets/kotlin-original.svg";
 
 export default function Skills() {
   const topMarqueeRef = useRef(null);
@@ -27,7 +28,6 @@ export default function Skills() {
       icon: "<>",
       items: [
         { name: "React", logo: reactLogo },
-        { name: "JavaScript", logo: jsLogo },
         { name: "HTML", logo: htmlLogo },
         { name: "CSS", logo: cssLogo },
         { name: "Tailwind" },
@@ -40,7 +40,9 @@ export default function Skills() {
       icon: "<>",
       items: [
         { name: "Java", logo: javaLogo },
+        { name: "JavaScript", logo: jsLogo },
         { name: "Python", logo: pythonLogo },
+        { name: "Kotlin", logo: kotlinLogo },
         { name: "NiceGUI", logo: niceGUILogo },
       ],
     },
