@@ -125,7 +125,7 @@ export default function Skills() {
             className="pointer-events-none absolute inset-0 opacity-40"
             style={{
               background:
-                "radial-gradient(900px 350px at 20% 0%, rgba(239,68,68,0.2), transparent 70%), radial-gradient(700px 300px at 80% 100%, rgba(239,68,68,0.1), transparent 70%)",
+                "radial-gradient(900px 350px at 20% 0%, rgba(239,68,68,0.4), transparent 70%), radial-gradient(700px 300px at 80% 100%, rgba(239,68,68,0.2), transparent 70%)",
             }}
           />
 
@@ -148,7 +148,7 @@ export default function Skills() {
                   {sec.items.map((item) => (
                     <span
                       key={item.name}
-                      className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm sm:text-base font-sans tracking-wide text-white/80 hover:bg-white/10 hover:border-white/30 transition-colors"
+                      className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm sm:text-base font-sans tracking-wide text-white/80 hover:bg-white/10 hover:border-white/30 transition-colors"
                     >
                       {item.logo && (
                         <img

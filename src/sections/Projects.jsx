@@ -73,7 +73,7 @@ export default function Projects() {
                   className="pointer-events-none absolute inset-0 opacity-40"
                   style={{
                     background:
-                      "radial-gradient(900px 350px at 25% 0%, rgba(239,68,68,0.8), transparent 70%), radial-gradient(700px 300px at 80% 100%, rgba(239,68,68,0.1), transparent 70%)",
+                      "radial-gradient(900px 350px at 25% 0%, rgba(239,68,68,0.8), transparent 80%), radial-gradient(700px 300px at 80% 100%, rgba(239,68,68,0.1), transparent 70%)",
                   }}
                 />
 
