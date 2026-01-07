@@ -33,6 +33,7 @@ export default function Skills() {
         { name: "Tailwind" },
         { name: "Vite", logo: viteLogo },
         { name: "GSAP", logo: gsapLogo },
+        { name: "NiceGUI", logo: niceGUILogo },
       ],
     },
     {
@@ -43,7 +44,6 @@ export default function Skills() {
         { name: "JavaScript", logo: jsLogo },
         { name: "Python", logo: pythonLogo },
         { name: "Kotlin", logo: kotlinLogo },
-        { name: "NiceGUI", logo: niceGUILogo },
       ],
     },
     {
