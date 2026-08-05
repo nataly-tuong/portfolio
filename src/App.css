@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap");
+@import "tailwindcss";
+
+body {
+  background-color: #020304;
+}
+
+@theme {
+  --color-mainAccent: #a3e635;
+  --color-accentDim: #365314;
+  --color-accentPink: #65a30d;
+  --color-secondaryAccent: #eef1f6;
+  --color-abyss: #020304;
+  --color-abyssPanel: #05070a;
+  --font-noto: "Noto Sans", sans-serif;
+  --font-bodoni: "Bodoni Moda", sans-serif;
+}
+
+::selection {
+  background: rgba(163, 230, 53, 0.35);
+  color: #eef1f6;
+}
+
+.nav-link.selected {
+  @apply bg-[#7E7E7E];
+}
+
+.nav-link {
+  @apply px-3 py-1 rounded-4xl text-center;
+}
+
+.special {
+  @apply bg-gradient-to-r from-mainAccent to-secondaryAccent bg-clip-text py-2 text-transparent font-semibold;
+}
+
+.skills-style {
+  @apply text-5xl font-semibold tracking-wide;
+}
+
+.text-glow {
+  text-shadow: 0 0 18px rgba(163, 230, 53, 0.45), 0 0 46px rgba(163, 230, 53, 0.22),
+    0 0 90px rgba(0, 0, 0, 0.7);
+}
+
+.text-glow-accent {
+  text-shadow: 0 0 10px rgba(163, 230, 53, 0.9), 0 0 24px rgba(163, 230, 53, 0.65);
+}
+
+.bracket-label {
+  @apply font-noto font-light text-[0.68rem] sm:text-xs tracking-[0.35em] uppercase text-white/40;
+}
+
+.bracket-label .bracket {
+  @apply text-mainAccent/70;
+}
+
+.ocean-panel {
+  @apply relative bg-black rounded-sm border border-white/12
+    transition-colors duration-500 hover:border-mainAccent/40;
+}
+
+.ocean-divider {
+  @apply h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent;
+}
+
+@keyframes contour-drift {
+  0% {
+    transform: scale(1.02) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.06) translate(-1%, 1%);
+  }
+  100% {
+    transform: scale(1.02) translate(0, 0);
+  }
+}
+
+.contour-drift {
+  animation: contour-drift 60s ease-in-out infinite;
+}
+
+@keyframes surface-shimmer {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.surface-shimmer {
+  animation: surface-shimmer 6s ease-in-out infinite;
+}
+
+@keyframes fish-drift-right {
+  from {
+    left: 55%;
+    transform: scaleX(-1);
+  }
+  to {
+    left: 120%;
+    transform: scaleX(-1);
+  }
+}
+
+@keyframes fish-drift-left {
+  from {
+    left: 120%;
+  }
+  to {
+    left: 55%;
+  }
+}
+
+.fish-drift-right {
+  animation-name: fish-drift-right;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.fish-drift-left {
+  animation-name: fish-drift-left;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-46px);
+    opacity: 0;
+  }
+}
+
+.bubble-rise {
+  animation: bubble-rise linear infinite;
+}
