@@ -25,7 +25,7 @@ export default function Projects() {
     },
     {
       title: "RecipeBook",
-      year: "2025",
+      year: "2026",
       category: "WEB",
       description:
         "A web app for storing and organizing recipes.",
@@ -35,7 +35,7 @@ export default function Projects() {
     },
     {
       title: "Pacific-Book-Hook",
-      year: "2025",
+      year: "2026",
       category: "WEB",
       description:
         "A book exchange platform where users list and trade books.",
