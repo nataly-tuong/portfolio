@@ -4,26 +4,6 @@ import Sparkle from "../components/Sparkle";
 export default function Projects() {
   const projects = [
     {
-      title: "KokoSpeak",
-      year: "2025",
-      category: "AI TOOL",
-      description:
-        "A user-friendly interface for Kokoro, an open-source AI text-to-speech tool that runs locally and generates speech in multiple languages.",
-      skills: ["Python", "AI", "UI/UX", "Tailwind", "NiceGUI"],
-      github: "https://github.com/nataly-tuong/koko",
-      website: null,
-    },
-    {
-      title: "Nataly's Portfolio",
-      year: "2025",
-      category: "WEB",
-      description:
-        "This site: projects, skills, and interactive animations.",
-      skills: ["React.js", "JavaScript", "GSAP", "TailwindCSS"],
-      github: "https://github.com/nataly-tuong/portfolio",
-      website: "https://nataly-tuong.github.io/portfolio",
-    },
-    {
       title: "RecipeBook",
       year: "2026",
       category: "WEB",
@@ -42,6 +22,26 @@ export default function Projects() {
       skills: ["Python", "Django"],
       github: null,
       website: null,
+    },
+    {
+      title: "KokoSpeak",
+      year: "2025",
+      category: "AI TOOL",
+      description:
+        "A user-friendly interface for Kokoro, an open-source AI text-to-speech tool that runs locally and generates speech in multiple languages.",
+      skills: ["Python", "AI", "UI/UX", "Tailwind", "NiceGUI"],
+      github: "https://github.com/nataly-tuong/koko",
+      website: null,
+    },
+    {
+      title: "Nataly's Portfolio",
+      year: "2025",
+      category: "WEB",
+      description:
+        "This site: projects, skills, and interactive animations.",
+      skills: ["React.js", "JavaScript", "GSAP", "TailwindCSS"],
+      github: "https://github.com/nataly-tuong/portfolio",
+      website: "https://nataly-tuong.github.io/portfolio",
     },
   ];
 
