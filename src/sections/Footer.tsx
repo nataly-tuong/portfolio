@@ -1,4 +1,11 @@
-function Fish({ className = "", style }) {
+import type { CSSProperties } from "react";
+
+type FishProps = {
+  className?: string;
+  style?: CSSProperties;
+};
+
+function Fish({ className = "", style }: FishProps) {
   return (
     <svg
       viewBox="0 0 60 24"
@@ -28,26 +35,51 @@ export default function Footer() {
         }}
       />
 
-      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden opacity-40">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 overflow-hidden opacity-40"
+      >
         <Fish
           className="fish-drift-right absolute w-10 h-4 text-mainAccent"
-          style={{ top: "28%", animationDuration: "26s", animationDelay: "-4s" }}
+          style={{
+            top: "28%",
+            animationDuration: "26s",
+            animationDelay: "-4s",
+          }}
         />
         <Fish
           className="fish-drift-left absolute w-7 h-3 text-accentPink/80"
-          style={{ top: "55%", animationDuration: "34s", animationDelay: "-14s" }}
+          style={{
+            top: "55%",
+            animationDuration: "34s",
+            animationDelay: "-14s",
+          }}
         />
         <Fish
           className="fish-drift-right absolute w-5 h-2.5 text-white/50"
-          style={{ top: "70%", animationDuration: "20s", animationDelay: "-8s" }}
+          style={{
+            top: "70%",
+            animationDuration: "20s",
+            animationDelay: "-8s",
+          }}
         />
         <span
           className="bubble-rise absolute h-1 w-1 rounded-full bg-white/30"
-          style={{ left: "18%", bottom: "20%", animationDuration: "5s", animationDelay: "-1.5s" }}
+          style={{
+            left: "18%",
+            bottom: "20%",
+            animationDuration: "5s",
+            animationDelay: "-1.5s",
+          }}
         />
         <span
           className="bubble-rise absolute h-[3px] w-[3px] rounded-full bg-white/25"
-          style={{ left: "72%", bottom: "15%", animationDuration: "6.5s", animationDelay: "-3s" }}
+          style={{
+            left: "72%",
+            bottom: "15%",
+            animationDuration: "6.5s",
+            animationDelay: "-3s",
+          }}
         />
       </div>
 

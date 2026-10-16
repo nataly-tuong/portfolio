@@ -1,4 +1,12 @@
-export default function VideoBackground({ src, className = "" }) {
+type VideoBackgroundProps = {
+  src: string;
+  className?: string;
+};
+
+export default function VideoBackground({
+  src,
+  className = "",
+}: VideoBackgroundProps) {
   return (
     <div
       aria-hidden="true"

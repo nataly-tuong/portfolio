@@ -38,7 +38,7 @@ export default function Navbar() {
     };
   }, []);
 
-  const handleLinkClick = (link) => {
+  const handleLinkClick = (link: string) => {
     setSelected(link);
     setIsMenuOpen(false);
     const section = document.getElementById(link);
@@ -104,7 +104,9 @@ export default function Navbar() {
       <div className="fixed top-0 left-0 z-[100] px-8 lg:px-12 py-8 font-noto pointer-events-none">
         <span
           className="font-light tracking-[0.35em] uppercase text-xs text-secondaryAccent/80 select-none"
-          style={{ textShadow: "0 1px 6px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.7)" }}
+          style={{
+            textShadow: "0 1px 6px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.7)",
+          }}
         >
           Nataly Tuong
         </span>
@@ -113,7 +115,9 @@ export default function Navbar() {
       <div className="fixed top-0 right-0 z-[100] px-8 lg:px-12 py-8 font-noto pointer-events-none">
         <span
           className="font-light tracking-[0.35em] uppercase text-[0.65rem] text-white/30 select-none"
-          style={{ textShadow: "0 1px 6px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.7)" }}
+          style={{
+            textShadow: "0 1px 6px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.7)",
+          }}
         >
           ( SWE )
         </span>
@@ -131,7 +135,10 @@ export default function Navbar() {
             style={
               selected === link
                 ? undefined
-                : { textShadow: "0 1px 6px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.7)" }
+                : {
+                    textShadow:
+                      "0 1px 6px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.7)",
+                  }
             }
             onClick={() => handleLinkClick(link)}
           >
