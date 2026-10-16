@@ -35,7 +35,7 @@ export default function Projects() {
       year: "2025",
       category: "WEB",
       description: "This site: projects, skills, and interactive animations.",
-      skills: ["React.js", "JavaScript", "GSAP", "TailwindCSS"],
+      skills: ["React.js", "Typescript", "JavaScript", "GSAP", "TailwindCSS"],
       github: "https://github.com/nataly-tuong/portfolio",
       website: "https://nataly-tuong.github.io/portfolio",
     },

@@ -18,6 +18,7 @@ import cLogo from "/assets/c-original.svg";
 import springLogo from "/assets/spring-original.svg";
 import djangoLogo from "/assets/django-plain.svg";
 import bootstrapLogo from "/assets/bootstrap-original.svg";
+import tsLogo from "/assets/typescript-original.svg";
 
 export default function Skills() {
   const sections = [
@@ -39,6 +40,7 @@ export default function Skills() {
       items: [
         { name: "Java", logo: javaLogo },
         { name: "JavaScript", logo: jsLogo },
+        { name: "Typescript", logo: tsLogo },
         { name: "Python", logo: pythonLogo },
         { name: "Kotlin", logo: kotlinLogo },
         { name: "C", logo: cLogo },
