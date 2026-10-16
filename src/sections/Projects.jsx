@@ -1,5 +1,4 @@
 import githubLogo from "/assets/github-original.svg";
-import Sparkle from "../components/Sparkle";
 
 export default function Projects() {
   const projects = [
@@ -7,8 +6,7 @@ export default function Projects() {
       title: "RecipeBook",
       year: "2026",
       category: "WEB",
-      description:
-        "A web app for storing and organizing recipes.",
+      description: "A web app for storing and organizing recipes.",
       skills: ["Java", "SpringBoot", "MySQL", "Maven", "Bootstrap"],
       github: null,
       website: null,
@@ -17,8 +15,7 @@ export default function Projects() {
       title: "Pacific-Book-Hook",
       year: "2026",
       category: "WEB",
-      description:
-        "A book exchange platform where users list and trade books.",
+      description: "A book exchange platform where users list and trade books.",
       skills: ["Python", "Django"],
       github: null,
       website: null,
@@ -37,8 +34,7 @@ export default function Projects() {
       title: "Nataly's Portfolio",
       year: "2025",
       category: "WEB",
-      description:
-        "This site: projects, skills, and interactive animations.",
+      description: "This site: projects, skills, and interactive animations.",
       skills: ["React.js", "JavaScript", "GSAP", "TailwindCSS"],
       github: "https://github.com/nataly-tuong/portfolio",
       website: "https://nataly-tuong.github.io/portfolio",
@@ -50,16 +46,12 @@ export default function Projects() {
       <div className="relative z-10 text-white py-20 sm:py-28 px-8 sm:px-15 lg:px-16">
         <div className="max-w-4xl mx-auto">
           <span className="bracket-label block">
-            <span className="bracket">( </span>03<span className="bracket"> )</span>
+            <span className="bracket">( </span>03
+            <span className="bracket"> )</span>
             &nbsp;&nbsp;WORK
           </span>
           <h3 className="text-5xl text-secondaryAccent font-bodoni sm:text-6xl font-medium mt-4 relative inline-block">
             Projects
-            <Sparkle
-              trigger="#Projects"
-              hue={60}
-              className="absolute -top-2 -right-9 w-8 h-8 sm:w-9 sm:h-9"
-            />
           </h3>
           <p className="mt-4 max-w-lg text-white/50 font-noto text-sm sm:text-base">
             Things I built.

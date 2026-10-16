@@ -18,7 +18,6 @@ import cLogo from "/assets/c-original.svg";
 import springLogo from "/assets/spring-original.svg";
 import djangoLogo from "/assets/django-plain.svg";
 import bootstrapLogo from "/assets/bootstrap-original.svg";
-import Sparkle from "../components/Sparkle";
 
 export default function Skills() {
   const sections = [
@@ -65,19 +64,18 @@ export default function Skills() {
   ];
 
   return (
-    <section id="Skills" className="relative bg-abyss text-white py-20 sm:py-28">
+    <section
+      id="Skills"
+      className="relative bg-abyss text-white py-20 sm:py-28"
+    >
       <div className="relative mx-auto max-w-7xl lg:max-w-[85rem] px-6 sm:px-10 lg:px-16 flex flex-col items-center text-center">
         <span className="bracket-label block">
-          <span className="bracket">( </span>02<span className="bracket"> )</span>
+          <span className="bracket">( </span>02
+          <span className="bracket"> )</span>
           &nbsp;&nbsp;STACK
         </span>
         <h3 className="font-bodoni text-5xl sm:text-6xl font-medium text-secondaryAccent mt-4 relative inline-block">
           Skills
-          <Sparkle
-            trigger="#Skills"
-            hue={100}
-            className="absolute -top-2 -right-9 w-8 h-8 sm:w-9 sm:h-9"
-          />
         </h3>
         <p className="mt-4 max-w-lg text-white/50 font-noto text-sm sm:text-base">
           Languages, frameworks and tools.
