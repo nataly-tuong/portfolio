@@ -1,11 +1,11 @@
-import type { CSSProperties } from "react";
+import type { CSSProperties, JSX } from "react";
 
 type FishProps = {
   className?: string;
   style?: CSSProperties;
 };
 
-function Fish({ className = "", style }: FishProps) {
+function Fish({ className = "", style }: FishProps): JSX.Element {
   return (
     <svg
       viewBox="0 0 60 24"

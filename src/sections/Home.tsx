@@ -1,10 +1,11 @@
 import { useRef } from "react";
+import type { JSX } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import VideoBackground from "../components/VideoBackground";
 
-export default function Home() {
-  const scope = useRef(null);
+export default function Home(): JSX.Element {
+  const scope = useRef<HTMLElement>(null);
   gsap.registerPlugin(useGSAP);
 
   useGSAP(
@@ -27,7 +28,7 @@ export default function Home() {
             ease: "power3.out",
             stagger: 0.12,
           },
-          "-=0.2"
+          "-=0.2",
         );
       gsap.set(".scroll-hint", { opacity: 0 });
       gsap.to(".scroll-hint", {
@@ -66,7 +67,7 @@ export default function Home() {
         yoyo: true,
       });
     },
-    { scope }
+    { scope },
   );
 
   return (
@@ -114,16 +115,21 @@ export default function Home() {
       <div className="absolute z-20 inset-0 hero-text flex flex-col items-center justify-center px-6 text-center">
         <span
           className="bracket-label mb-6"
-          style={{ textShadow: "0 1px 6px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.6)" }}
+          style={{
+            textShadow: "0 1px 6px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.6)",
+          }}
         >
-          <span className="bracket">( </span>PORTFOLIO<span className="bracket"> )</span>
+          <span className="bracket">( </span>PORTFOLIO
+          <span className="bracket"> )</span>
         </span>
         <h1 className="font-bodoni text-[clamp(2.8rem,7vw,5.5rem)] leading-[0.95] text-glow font-medium text-secondaryAccent">
           Nataly Tuong
         </h1>
         <h2
           className="font-bodoni mt-6 text-lg sm:text-2xl text-white/70 italic"
-          style={{ textShadow: "0 1px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.6)" }}
+          style={{
+            textShadow: "0 1px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.6)",
+          }}
         >
           Aspiring Software Engineer
         </h2>

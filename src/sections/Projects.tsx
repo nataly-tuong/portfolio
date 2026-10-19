@@ -1,7 +1,18 @@
+import type { JSX } from "react";
 import githubLogo from "/assets/github-original.svg";
 
-export default function Projects() {
-  const projects = [
+type Project = {
+  title: string;
+  year: string;
+  category: string;
+  description: string;
+  skills: string[];
+  github: string | null;
+  website: string | null;
+};
+
+export default function Projects(): JSX.Element {
+  const projects: Project[] = [
     {
       title: "RecipeBook",
       year: "2026",

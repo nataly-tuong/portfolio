@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 type VideoBackgroundProps = {
   src: string;
   className?: string;
@@ -6,7 +8,7 @@ type VideoBackgroundProps = {
 export default function VideoBackground({
   src,
   className = "",
-}: VideoBackgroundProps) {
+}: VideoBackgroundProps): JSX.Element {
   return (
     <div
       aria-hidden="true"

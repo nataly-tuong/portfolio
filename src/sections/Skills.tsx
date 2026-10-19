@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import javaLogo from "/assets/java-original.svg";
 import jsLogo from "/assets/javascript-original.svg";
 import htmlLogo from "/assets/html5-original.svg";
@@ -20,8 +21,18 @@ import djangoLogo from "/assets/django-plain.svg";
 import bootstrapLogo from "/assets/bootstrap-original.svg";
 import tsLogo from "/assets/typescript-original.svg";
 
-export default function Skills() {
-  const sections = [
+type SkillItem = {
+  name: string;
+  logo?: string;
+};
+
+type SkillSection = {
+  title: string;
+  items: SkillItem[];
+};
+
+export default function Skills(): JSX.Element {
+  const sections: SkillSection[] = [
     {
       title: "Frontend",
       items: [
@@ -40,7 +51,7 @@ export default function Skills() {
       items: [
         { name: "Java", logo: javaLogo },
         { name: "JavaScript", logo: jsLogo },
-        { name: "Typescript", logo: tsLogo },
+        { name: "TypeScript", logo: tsLogo },
         { name: "Python", logo: pythonLogo },
         { name: "Kotlin", logo: kotlinLogo },
         { name: "C", logo: cLogo },

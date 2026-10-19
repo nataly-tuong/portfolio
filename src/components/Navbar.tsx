@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
+import type { JSX } from "react";
 
-export default function Navbar() {
-  const [selected, setSelected] = useState("Home");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const links = ["Home", "Skills", "Projects", "Contact"];
+const links = ["Home", "Skills", "Projects", "Contact"] as const;
+type LinkName = (typeof links)[number];
+
+export default function Navbar(): JSX.Element {
+  const [selected, setSelected] = useState<LinkName>("Home");
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
-    const checkMobile = () => {
+    const checkMobile = (): void => {
       setIsMobile(window.innerWidth < 768);
       if (window.innerWidth >= 768) setIsMenuOpen(false);
     };
@@ -17,9 +20,9 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       const scrollPos = window.scrollY + window.innerHeight / 2;
-      for (let link of links) {
+      for (const link of links) {
         const section = document.getElementById(link);
         if (!section) continue;
         const top = section.offsetTop;
@@ -38,7 +41,7 @@ export default function Navbar() {
     };
   }, []);
 
-  const handleLinkClick = (link: string) => {
+  const handleLinkClick = (link: LinkName): void => {
     setSelected(link);
     setIsMenuOpen(false);
     const section = document.getElementById(link);
