@@ -14,6 +14,16 @@ type Project = {
 export default function Projects(): JSX.Element {
   const projects: Project[] = [
     {
+      title: "Stemcraft",
+      year: "2026",
+      category: "WEB",
+      description:
+        "A bouquet planner that gives feedback on flower arrangements based on color, texture, and meaning.",
+      skills: ["React.js", "Typescript", "TailwindCSS", "Vercel", "Groq API"],
+      github: "https://github.com/nataly-tuong/stemcraft",
+      website: "https://stemcraft-psi.vercel.app/",
+    },
+    {
       title: "RecipeBook",
       year: "2026",
       category: "WEB",
