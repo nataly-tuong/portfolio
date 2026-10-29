@@ -1,81 +1,7 @@
 import type { JSX } from "react";
-import javaLogo from "/assets/java-original.svg";
-import jsLogo from "/assets/javascript-original.svg";
-import htmlLogo from "/assets/html5-original.svg";
-import cssLogo from "/assets/css3-original.svg";
-import pythonLogo from "/assets/python-original.svg";
-import reactLogo from "/assets/react-original.svg";
-import gitLogo from "/assets/git-original.svg";
-import githubLogo from "/assets/github-original.svg";
-import viteLogo from "/assets/vite-original.svg";
-import gsapLogo from "/assets/gsap-white.svg";
-import niceGUILogo from "/assets/niceGUILogo.png";
-import mongoDBLogo from "/assets/mongodb-original-wordmark.svg";
-import mySQLLogo from "/assets/mysql-original-wordmark.svg";
-import postmanLogo from "/assets/postman-icon.svg";
-import kotlinLogo from "/assets/kotlin-original.svg";
-import tailwindLogo from "/assets/tailwindcss-original.svg";
-import cLogo from "/assets/c-original.svg";
-import springLogo from "/assets/spring-original.svg";
-import djangoLogo from "/assets/django-plain.svg";
-import bootstrapLogo from "/assets/bootstrap-original.svg";
-import tsLogo from "/assets/typescript-original.svg";
-
-type SkillItem = {
-  name: string;
-  logo?: string;
-};
-
-type SkillSection = {
-  title: string;
-  items: SkillItem[];
-};
+import { skillSections } from "../data/skills";
 
 export default function Skills(): JSX.Element {
-  const sections: SkillSection[] = [
-    {
-      title: "Frontend",
-      items: [
-        { name: "React", logo: reactLogo },
-        { name: "HTML", logo: htmlLogo },
-        { name: "CSS", logo: cssLogo },
-        { name: "Tailwind", logo: tailwindLogo },
-        { name: "Bootstrap", logo: bootstrapLogo },
-        { name: "Vite", logo: viteLogo },
-        { name: "GSAP", logo: gsapLogo },
-        { name: "NiceGUI", logo: niceGUILogo },
-      ],
-    },
-    {
-      title: "Backend",
-      items: [
-        { name: "Java", logo: javaLogo },
-        { name: "JavaScript", logo: jsLogo },
-        { name: "TypeScript", logo: tsLogo },
-        { name: "Python", logo: pythonLogo },
-        { name: "Kotlin", logo: kotlinLogo },
-        { name: "C", logo: cLogo },
-        { name: "SpringBoot", logo: springLogo },
-        { name: "Django", logo: djangoLogo },
-      ],
-    },
-    {
-      title: "Database",
-      items: [
-        { name: "MongoDB", logo: mongoDBLogo },
-        { name: "MySQL", logo: mySQLLogo },
-      ],
-    },
-    {
-      title: "Tools",
-      items: [
-        { name: "Git", logo: gitLogo },
-        { name: "GitHub", logo: githubLogo },
-        { name: "Postman", logo: postmanLogo },
-      ],
-    },
-  ];
-
   return (
     <section
       id="Skills"
@@ -94,8 +20,8 @@ export default function Skills(): JSX.Element {
           Languages, frameworks and tools.
         </p>
 
-        <div className="w-full max-w-5xl mx-auto bg-black rounded-sm grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-10 px-6 py-10 mt-12 sm:px-10 sm:py-12">
-          {sections.map((sec) => (
+        <div className="w-full max-w-5xl mx-auto bg-black rounded-sm grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10 px-6 py-10 mt-12 sm:px-10 sm:py-12">
+          {skillSections.map((sec) => (
             <div key={sec.title} className="flex flex-col items-center">
               <h4 className="font-bodoni text-xl sm:text-2xl text-secondaryAccent font-medium">
                 {sec.title}
