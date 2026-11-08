@@ -8,7 +8,7 @@ export const projects = [
     alt: "KokoSpeak studio with script editor, voice blending controls, and audio export",
     description:
       "A space for every voice. Write scripts, blend voices, shape their delivery, and export audio and subtitles. All on your own computer!",
-    stack: ["React", "Python", "Kokoro", "TypeScript"],
+    stack: ["React", "Python", "Kokoro", "TypeScript", "FastAPI"],
     detail:
       "A React interface backed by Python and the open-source Kokoro model. Revamped from the original application through architecture, installation, and deployment with Codex Sol.",
     note: "Development workflow · Codex Sol",
