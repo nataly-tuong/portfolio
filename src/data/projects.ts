@@ -54,7 +54,7 @@ export const projects = [
   },
   {
     id: "04",
-    title: "This portfolio",
+    title: "This portfolio. Cool like a gallery. Has projects.",
     category: "WEB / INTERACTION",
     image: asset("portfolio.png"),
     alt: "",
