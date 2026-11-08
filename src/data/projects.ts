@@ -54,14 +54,13 @@ export const projects = [
   },
   {
     id: "04",
-    title: "This portfolio. Cool like a gallery. Has projects.",
+    title: "This Portfolio",
     category: "WEB / INTERACTION",
     image: asset("portfolio.png"),
     alt: "",
     description: "Portfolio site",
     stack: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    detail:
-      "A responsive portfolio with screenshot-led project stories, accessible navigation, and reduced-motion support. The original fish video remains the visual signature.",
+    detail: "This portfolio. Cool like a gallery. Has projects.",
     note: "You’re here",
     github: "https://github.com/nataly-tuong/portfolio",
     live: null,
