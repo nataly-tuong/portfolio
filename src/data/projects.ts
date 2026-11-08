@@ -37,7 +37,7 @@ export const projects = [
     image: asset("mothball.webp"),
     alt: "Mothball shared closet landing page with inventory statuses and collaboration features",
     description:
-      "One closet, multiple people. A shared inventory that keeps everyone in sync on what’s listed, what’s waiting, and what happens next.",
+      "One closet for multiple people. A shared inventory that keeps everyone in sync on what’s listed, what’s waiting, and what happens next.",
     stack: [
       "React",
       "TypeScript",
@@ -58,8 +58,7 @@ export const projects = [
     category: "WEB / INTERACTION",
     image: asset("portfolio.png"),
     alt: "",
-    description:
-      "A small corner of the internet, made my own. An editorial project gallery with a signature lime accent and a fish moving quietly in the background.",
+    description: "Portfolio site",
     stack: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     detail:
       "A responsive portfolio with screenshot-led project stories, accessible navigation, and reduced-motion support. The original fish video remains the visual signature.",
