@@ -1,24 +1,7 @@
-import type { JSX } from "react";
-import Navbar from "./components/Navbar";
-import Home from "./sections/Home";
-import Skills from "./sections/Skills";
-import Projects from "./sections/Projects";
-import Contact from "./sections/Contact";
-import Footer from "./sections/Footer";
-
-function App(): JSX.Element {
-  return (
-    <>
-      <main>
-        <Navbar />
-        <Home />
-        <Skills />
-        <Projects />
-        <Contact />
-        <Footer />
-      </main>
-    </>
-  );
-}
-
-export default App;
+import Navbar from './components/Navbar';
+import Home from './sections/Home';
+import Projects from './sections/Projects';
+import Skills from './sections/Skills';
+import Contact from './sections/Contact';
+import Footer from './sections/Footer';
+export default function App(){return <><a className="skip-link" href="#Projects">Skip to projects</a><Navbar/><main><Home/><Projects/><Skills/><Contact/></main><Footer/></>}

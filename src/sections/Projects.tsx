@@ -1,163 +1,126 @@
-import type { JSX } from "react";
-import githubLogo from "/assets/github-original.svg";
-
-type Project = {
-  title: string;
-  year: string;
-  category: string;
-  description: string;
-  skills: string[];
-  github: string | null;
-  website: string | null;
-};
-
-export default function Projects(): JSX.Element {
-  const projects: Project[] = [
-    {
-      title: "Stemcraft",
-      year: "2026",
-      category: "WEB",
-      description:
-        "A bouquet planner that gives feedback on flower arrangements based on color, texture, and meaning.",
-      skills: ["React.js", "Typescript", "TailwindCSS", "Vercel", "Groq API"],
-      github: "https://github.com/nataly-tuong/stemcraft",
-      website: "https://stemcraft-psi.vercel.app/",
-    },
-    {
-      title: "RecipeBook",
-      year: "2026",
-      category: "WEB",
-      description: "A web app for storing and organizing recipes.",
-      skills: ["Java", "SpringBoot", "MySQL", "Maven", "Bootstrap"],
-      github: null,
-      website: null,
-    },
-    {
-      title: "Pacific-Book-Hook",
-      year: "2026",
-      category: "WEB",
-      description: "A book exchange platform where users list and trade books.",
-      skills: ["Python", "Django"],
-      github: null,
-      website: null,
-    },
-    {
-      title: "KokoSpeak",
-      year: "2025",
-      category: "AI TOOL",
-      description:
-        "A user-friendly interface for Kokoro, an open-source AI text-to-speech tool that runs locally and generates speech in multiple languages.",
-      skills: ["Python", "AI", "UI/UX", "Tailwind", "NiceGUI"],
-      github: "https://github.com/nataly-tuong/koko",
-      website: null,
-    },
-    {
-      title: "Nataly's Portfolio",
-      year: "2025",
-      category: "WEB",
-      description: "This site: projects, skills, and interactive animations.",
-      skills: ["React.js", "Typescript", "JavaScript", "GSAP", "TailwindCSS"],
-      github: "https://github.com/nataly-tuong/portfolio",
-      website: "https://nataly-tuong.github.io/portfolio",
-    },
-  ];
-
+import { useState } from "react";
+import Arrow from "../components/Arrow";
+import { projects } from "../data/projects";
+export default function Projects() {
+  const [expanded, setExpanded] = useState<string[]>([]);
   return (
-    <section id="Projects" className="relative bg-abyss">
-      <div className="relative z-10 text-white py-20 sm:py-28 px-8 sm:px-15 lg:px-16">
-        <div className="max-w-4xl mx-auto">
-          <span className="bracket-label block">
-            <span className="bracket">( </span>03
-            <span className="bracket"> )</span>
-            &nbsp;&nbsp;WORK
-          </span>
-          <h3 className="text-5xl text-secondaryAccent font-bodoni sm:text-6xl font-medium mt-4 relative inline-block">
-            Projects
-          </h3>
-          <p className="mt-4 max-w-lg text-white/50 font-noto text-sm sm:text-base">
-            Things I built.
-          </p>
-
-          <div className="mt-12 bg-black rounded-sm px-6 -mx-6 sm:px-8 sm:-mx-8 border-t border-white/10">
-            {projects.map((project, idx) => (
-              <div
-                key={idx}
-                className="group grid grid-cols-[3rem_1fr] sm:grid-cols-[4rem_9rem_1fr_auto] items-start sm:items-center gap-x-4 gap-y-3 py-7 border-b border-white/10 transition-colors hover:border-mainAccent/30"
-              >
-                <span className="row-start-1 col-start-1 font-noto text-xs tracking-[0.2em] text-white/30 pt-1 sm:pt-0">
-                  {project.year}
-                </span>
-
-                <span className="hidden sm:inline font-noto text-[0.65rem] tracking-[0.25em] text-mainAccent/70 uppercase">
-                  {project.category}
-                </span>
-
-                <div className="row-start-2 sm:row-start-auto col-span-2 sm:col-span-1">
-                  <h4 className="text-2xl sm:text-3xl font-bodoni font-medium text-secondaryAccent group-hover:text-mainAccent transition-colors">
-                    {project.title}
-                  </h4>
-                  <p className="mt-2 text-white/45 text-sm sm:text-base font-noto max-w-xl">
-                    {project.description}
-                  </p>
-                  <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
-                    {project.skills.map((skill, i) => (
-                      <span
-                        key={i}
-                        className="text-[0.7rem] sm:text-xs font-noto tracking-wide text-white/35"
-                      >
-                        {skill}
-                        {i < project.skills.length - 1 && (
-                          <span className="text-white/15"> · </span>
-                        )}
-                      </span>
-                    ))}
+    <section id="Projects" className="section projects">
+      <div className="section-heading">
+        <p className="eyebrow">
+          <span className="accent">01</span> / SELECTED WORK
+        </p>
+        <h2>Ideas into projects.</h2>
+        <p>Things I made</p>
+      </div>
+      <div className="project-grid">
+        {projects.map((project) => (
+          <article className="project" key={project.id}>
+            <div
+              className={`project-image ${!project.image ? "portfolio-image" : ""}`}
+            >
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.alt}
+                  loading="lazy"
+                  width="1400"
+                  height="1700"
+                />
+              ) : (
+                <div
+                  className="portfolio-art"
+                  aria-label="Typographic preview of this portfolio"
+                >
+                  <div className="mini-nav">
+                    nataly tuong<span>PORTFOLIO / 2026</span>
+                  </div>
+                  <div className="mini-name">
+                    Nataly
+                    <br />
+                    Tuong<span>.</span>
+                  </div>
+                  <div className="mini-bottom">
+                    <span>THOUGHTFUL INTERFACES.</span>
+                    <span className="accent">↗</span>
                   </div>
                 </div>
-
-                <div className="row-start-1 sm:row-start-auto col-start-2 sm:col-start-4 flex gap-3 text-white justify-self-end">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${project.title} on GitHub`}
-                      className="opacity-60 hover:opacity-100 transition-opacity"
+              )}
+              <span className="project-number">{project.id}</span>
+            </div>
+            <div className="project-meta">
+              <p className="eyebrow">{project.category}</p>
+              <span>2026</span>
+            </div>
+            <div className="project-title">
+              <h3>{project.title}</h3>
+              <div className="project-links">
+                {project.github && (
+                  <a
+                    className="icon-link"
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${project.title} source on GitHub`}
+                    title="GitHub source"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.4"
                     >
-                      <img
-                        src={githubLogo}
-                        alt="github"
-                        className="bg-white rounded-full w-4 h-4 sm:w-5 sm:h-5 p-[1px]"
-                      />
-                    </a>
-                  )}
-                  {project.website && (
-                    <a
-                      href={project.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${project.title} live site`}
-                      className="text-white/60 hover:text-accentPink transition-colors"
-                    >
-                      <svg
-                        viewBox="0 0 24 24"
-                        className="w-4 h-4 sm:w-5 sm:h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M7 17 17 7M9 7h8v8"
-                        />
-                      </svg>
-                    </a>
-                  )}
-                </div>
+                      <path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16" />
+                    </svg>
+                  </a>
+                )}
+                {project.live && (
+                  <a
+                    className="icon-link"
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${project.title} live site`}
+                    title="Live site"
+                  >
+                    <Arrow />
+                  </a>
+                )}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+            <p className="project-description">{project.description}</p>
+            <ul className="tags" aria-label={`${project.title} technologies`}>
+              {project.stack.map((s) => (
+                <li key={s}>{s}</li>
+              ))}
+            </ul>
+            <button
+              className="details-toggle"
+              aria-expanded={expanded.includes(project.id)}
+              aria-controls={`details-${project.id}`}
+              onClick={() =>
+                setExpanded((old) =>
+                  old.includes(project.id)
+                    ? old.filter((id) => id !== project.id)
+                    : [...old, project.id],
+                )
+              }
+            >
+              Project notes{" "}
+              <span aria-hidden="true">
+                {expanded.includes(project.id) ? "−" : "+"}
+              </span>
+            </button>
+            <div
+              id={`details-${project.id}`}
+              hidden={!expanded.includes(project.id)}
+              className="project-details"
+            >
+              <p>{project.detail}</p>
+              <p className="workflow-note">{project.note}</p>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );
