@@ -22,7 +22,7 @@ export default function Home() {
         </div>
       </div>
       <div className="hero-footnote">
-        <span>SOFTWARE, WITH A HUMAN TOUCH.</span>
+        <span>I COULDNT THINK OF COOL WORDS TO PUT HERE.</span>
         <a href="#Projects">
           SCROLL TO EXPLORE <span aria-hidden="true">↓</span>
         </a>
