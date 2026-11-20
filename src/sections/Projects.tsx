@@ -1,20 +1,26 @@
 import { useState } from "react";
 import Arrow from "../components/Arrow";
+import Reveal from "../components/Reveal";
 import { projects } from "../data/projects";
 export default function Projects() {
   const [expanded, setExpanded] = useState<string[]>([]);
   return (
     <section id="Projects" className="section projects">
-      <div className="section-heading">
+      <Reveal className="section-heading">
         <p className="eyebrow">
           <span className="accent">01</span> / SELECTED WORK
         </p>
         <h2>Ideas into projects.</h2>
         <p>Things I made</p>
-      </div>
+      </Reveal>
       <div className="project-grid">
-        {projects.map((project) => (
-          <article className="project" key={project.id}>
+        {projects.map((project, index) => (
+          <Reveal
+            as="article"
+            className={`project ${project.id === "04" ? "portfolio-project" : ""}`}
+            delay={index * 90}
+            key={project.id}
+          >
             <div
               className={`project-image ${!project.image ? "portfolio-image" : ""}`}
             >
@@ -119,7 +125,7 @@ export default function Projects() {
               <p>{project.detail}</p>
               <p className="workflow-note">{project.note}</p>
             </div>
-          </article>
+          </Reveal>
         ))}
       </div>
     </section>

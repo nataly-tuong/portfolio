@@ -1,7 +1,9 @@
 import Arrow from "../components/Arrow";
+import Reveal from "../components/Reveal";
 export default function Contact() {
   return (
     <section id="Contact" className="section contact">
+      <Reveal className="contact-content">
       <p className="eyebrow">
         <span className="accent">03</span> / SAY HELLO
       </p>
@@ -29,6 +31,7 @@ export default function Contact() {
           LinkedIn <Arrow />
         </a>
       </div>
+      </Reveal>
     </section>
   );
 }

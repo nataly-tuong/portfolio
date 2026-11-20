@@ -49,8 +49,8 @@ export const projects = [
     detail:
       "A Vite frontend and Express API, with PostgreSQL and Prisma for data, Cloudinary for images, JWT authentication with Google OAuth, and Docker for local development.",
     note: "Also built with · Vite, Cloudinary, JWT, Google OAuth, Docker",
-    github: null,
-    live: null,
+    github: "https://github.com/nataly-tuong/mothball",
+    live: "https://mothball-closet.vercel.app/",
   },
   {
     id: "04",
@@ -63,6 +63,6 @@ export const projects = [
     detail: "This portfolio. Cool like a gallery. Has projects.",
     note: "You’re here",
     github: "https://github.com/nataly-tuong/portfolio",
-    live: null,
+    live: "https://natalytuong.is-a.dev/",
   },
 ];
