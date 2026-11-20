@@ -17,7 +17,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <Reveal
             as="article"
-            className={`project ${project.id === "04" ? "portfolio-project" : ""}`}
+            className={`project ${project.id === "05" ? "portfolio-project" : ""} ${project.title === "Wurldwurld" ? "wurldwurld-project" : ""}`}
             delay={index * 90}
             key={project.id}
           >

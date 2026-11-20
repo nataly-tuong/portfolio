@@ -1,7 +1,38 @@
 const asset = (name: string) => `${import.meta.env.BASE_URL}assets/${name}`;
+
 export const projects = [
   {
     id: "01",
+    title: "Mothball",
+    category: "FULL STACK / COLLABORATION",
+    image: asset("mothball.webp"),
+    alt: "Mothball shared closet landing page with inventory statuses and collaboration features",
+    description:
+      "One closet for multiple people. A shared inventory that keeps everyone in sync on what’s listed, what’s waiting, and what happens next.",
+    stack: ["React", "TypeScript", "Tailwind CSS", "Express", "PostgreSQL", "Prisma"],
+    detail:
+      "A Vite frontend and Express API, with PostgreSQL and Prisma for data, Cloudinary for images, JWT authentication with Google OAuth, and Docker for local development.",
+    note: "Also built with · Vite, Cloudinary, JWT, Google OAuth, Docker",
+    github: "https://github.com/nataly-tuong/mothball",
+    live: "https://mothball-closet.vercel.app/",
+  },
+  {
+    id: "02",
+    title: "Wurldwurld",
+    category: "AGENTIC / AI OS",
+    image: asset("wurldwurld.png"),
+    alt: "Wurldwurld pixel-art agentic operating system with an RPG world and AI agents",
+    description:
+      "I wanted to play with the idea of an agentic OS. But, dashboards felt boring. So I built a living RPG world where the agents actually do things on my computer.",
+    stack: ["Claude Code", "Codex", "Groq", "Gemini", "OpenRouter", "Ollama", "MCP", "Agentic"],
+    detail:
+      "An agentic platform imagined as a living RPG world, where a faculty of agents and their subagents work across tasks on a computer.",
+    note: "Agentic OS experiment",
+    github: null,
+    live: null,
+  },
+  {
+    id: "03",
     title: "KokoSpeak",
     category: "LOCAL AI / AUDIO",
     image: asset("kokospeak.webp"),
@@ -16,7 +47,7 @@ export const projects = [
     live: null,
   },
   {
-    id: "02",
+    id: "04",
     title: "Stemcraft",
     category: "WEB / GENERATIVE AI",
     image: asset("stemcraft.webp"),
@@ -31,29 +62,7 @@ export const projects = [
     live: "https://stemcraft-psi.vercel.app/",
   },
   {
-    id: "03",
-    title: "Mothball",
-    category: "FULL STACK / COLLABORATION",
-    image: asset("mothball.webp"),
-    alt: "Mothball shared closet landing page with inventory statuses and collaboration features",
-    description:
-      "One closet for multiple people. A shared inventory that keeps everyone in sync on what’s listed, what’s waiting, and what happens next.",
-    stack: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Express",
-      "PostgreSQL",
-      "Prisma",
-    ],
-    detail:
-      "A Vite frontend and Express API, with PostgreSQL and Prisma for data, Cloudinary for images, JWT authentication with Google OAuth, and Docker for local development.",
-    note: "Also built with · Vite, Cloudinary, JWT, Google OAuth, Docker",
-    github: "https://github.com/nataly-tuong/mothball",
-    live: "https://mothball-closet.vercel.app/",
-  },
-  {
-    id: "04",
+    id: "05",
     title: "This Portfolio",
     category: "WEB / INTERACTION",
     image: asset("portfolio.png"),
